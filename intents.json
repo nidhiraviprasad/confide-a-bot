@@ -1,0 +1,116 @@
+{"intents":[
+	{"tag": "greeting",
+	"patterns": ["Hello", "hi", "how art thou", "howdy", "Good morning", "g'day mate", "Who's there?", "what's up?"],
+	"responses": ["Hello!", "Hey!", "What's crackalackin'", "Good to see you!", "How can I help you?"],
+	"context_set": ""
+	},
+
+	{"tag": "mind",
+	"patterns": ["stress", "anxiety", "depression", "pressure"],
+	"responses": ["What's going through your head right now?", "What are you feeling (ex. sad, lonely, mad, tired)?", "Would you like to talk about it?", "Wanna talk about it?"],
+	"context_set": ""
+	},
+
+	{"tag": "feelings1",
+	"patterns": ["mad", "angry", "irritated", "annoyed", "pissed"],
+	"responses": ["Try this breathing exercise 3 times: breathe in for 4 counts, hold for 4 counts, and breathe out for 8 counts. How do you feel now?", "Go for a short run to clear your head!", "Try lighting a candle! I would recommend mint, lavender, sage, or vanilla.", "Try listening to beach or rainforest sounds to calm yourself", "Take a power nap!"],
+	"context_set": ""
+	},
+
+	{"tag": "sad",
+	"patterns": ["sad", "gloomy", "unhappy", "blue", "upset", "miserable" ],
+  	"responses": ["Try reading a book", "Make some tea. My favorites are chamomile, mint.", "Write about how you feel", "Listen to upbeat music! My personal recommendations are: Big Plans - Why Don't We, High Hopes - Panic! At The Disco, Roxanne - Arizona Zervas, Liar - Camila Cabello.", "Call up a friend", "Go on a walk and enjoy nature!", "Try lighting a candle! I like citrus, jasmine, or eucalyptus."],
+	"context_set": ""
+	},
+
+  	{"tag": "panic",
+	"patterns": ["panic attack", "panic", "can't breath", "I'm panicking"],
+	"responses": ["Sit down and take a deep breathe", "List 5 things you can see out loud. List 4 things you can touch. List three things you can hear. List two things you can taste. List one thing you can smell.", "Having a sugary drink might help"],
+	"context_set": ""
+	},
+
+  	{"tag": "lonliness",
+	"patterns": ["alone", "lonely", "no friends"],
+  	"responses": ["Listening to some upbeat music may help.", "Go to the mall and start a conversation with a random stranger.", "Take a cold shower", "Cuddle up with a good book"],
+	"context_set": ""
+	},
+
+	{"tag": "physical1",
+	"patterns": ["hungry", "physical"],
+	"responses": ["Have a healthy snack like a bowl of fruit.", "Treat yourself to a sweet treat like ice-cream."],
+	"context_set": ""
+	},
+
+	{"tag": "physical2",
+	"patterns": ["dizzy", "shaking", "jitters", "faint", "breathing", "physical"],
+	"responses": ["Try this breathing exercise 3 times: breathe in for 4 counts, hold for 4 counts, and breathe out for 8 counts. How do you feel now?", "seek medical assistence if it is difficult to breathe.", "sit down, take a breath" ,"listen to some calming music", "And how do you feel emotionally?", "Close your eyes for a couple minutes with a blank mind."],
+	"context_set": ""
+	},
+
+	{"tag": "bullying",
+	"patterns": ["They really hate me", "she's making fun of me", "I don't want to go to school because of them"],
+	"responses": ["The best way to deal with bullies is to ignore them", "Don't let them see how their words affect you.", "If you don't react they will get tired of bullying you."],
+	"context_set": ""
+	},
+
+  	{"tag": "tired",
+  	"patterns": ["i'm tired", "i feel tired", "tired", "exhausted", "i'm done with everything", "i feel drained"],
+  	"responses": ["Take a long nap to refresh!", "Make some hot chocolate and watch an episode of your favorite TV show.", "Is it more of a physical tiredness, or mental?"],
+	"context_set": ""
+  	},
+
+	{"tag": "self-love",
+	"patterns": ["I'm so stupid", "I hate myself", "Nobody likes me", "I'm ugly", "i feel like trash"],
+	"responses": ["I know it feels like it's never going to get better, but that is not true.", "Someone does care about you no matter what.", "Listen to some encouraging music. I recommend Working on It - Meghan Trainor, Girls Like You - Maroon 5, Good as Hell - Lizzo."],
+	"context_set": ""
+	},
+
+	{"tag": "help",
+	"patterns": ["I need help", "I need someone", "suicidal", "kill myself", "die"],
+	"responses": ["Would you like to call the National Suicide Prevention Hotline? (1-800-273-8255)", "Would you like to call a trusted adult?", "Please call a trusted adult or the National Suicide Prevention Hotline (1-800-273-8255)"],
+	"context_set": ""
+	},
+
+  	{"tag": "LGBTQ",
+	"patterns": ["sexuality", "love", "romantic interest", "sexual interest", "gay", "lesbian", "bi", "queer", "i don't think i'm supposed to be a girl", "i don't think i'm a boy"],
+  	"responses": ["No matter what you identify as, know that I love and support you!", "There are many support groups available online (examples include NAMI, GLMA, AGLP)", "Love is love and it doesn't matter who you love as long as you are happy.", "Do whatever makes you happy and lets you feel like your self."],
+	"context_set": ""
+	},
+
+  	{"tag": "familyproblems",
+	"patterns": ["My parents are fighting", "All I hear now is arguments", "They don't do anything but argue", "It has been forever since we had a decent family meal", "divorce", "mom", "dad", "sibling", "sister", "brother"],
+	"responses": ["This is something they need to figure out", "It's not your fault", "You could plan a night out with your friends!", "If you have siblings, try spending more time with them.", "It will be okay, you need to take some time off for yourself", "I know it's tough and it sucks, but it will be okay."],
+	"context_set": ""
+	},
+
+  	{"tag": "friendproblems1",
+	"patterns": ["They're toxic", "They pressure me", "I feel like they don't want to be my friend", "I feel like they're like controlling me", "Talk behind my back", "manipulate me"],
+	"responses": ["You deserve better than someone who treats you like that", "Talk to your friend about how they make you feel.", "Speak up for yourself and don't let them hurt you"],
+	"context_set": ""
+	},
+
+  	{"tag": "friendproblems2",
+	"patterns": ["huge fight", "Don't know what I did wrong", "I messed up my relationship with them"],
+	"responses": ["Try talking it out with them.", "If they really care about you, they won't let you go", "Try taking some space and figuring out the relationship between you guys."],
+	"context_set": ""
+	},
+
+	{"tag": "thankyou",
+	"patterns": ["ok thank you", "this was helpful", "Thanks", "Thank you"],
+	"responses": ["Glad I was able to help!", "You're welcome", "My pleasure", "Anytime", "No problem! Would you like help with anything else?"],
+	"context_set": ""
+	},
+
+	{"tag": "happy",
+	"patterns": ["better", "good", "happy"],
+	"responses": ["Glad you're feeling good!", "Glad you're alright!"],
+	"context_set": ""
+	},
+
+	{"tag": "bye",
+	"patterns": ["Bye", "See you later", "Goodbye"],
+	"responses": ["Goodbye!", "Hope you feel better!", "Bye! Have a nice day!", "I'm always here for you if you need me!"],
+	"context_set": ""
+	}
+
+]}
