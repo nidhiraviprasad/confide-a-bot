@@ -1,0 +1,6241 @@
+
+� � 
+9
+Add
+x"T
+y"T
+z"T"
+Ttype:
+
+2	
+T
+AddN
+inputs"T*N
+sum"T"
+Nint(0"
+Ttype:
+2	
+��
+�
+	ApplyAdam
+var"T�	
+m"T�	
+v"T�
+beta1_power"T
+beta2_power"T
+lr"T
+
+beta1"T
+
+beta2"T
+epsilon"T	
+grad"T
+out"T�"
+Ttype:
+2	
+"
+use_lockingbool( "
+use_nesterovbool( 
+�
+ArgMax
+
+input"T
+	dimension"Tidx
+output"output_type"
+Ttype:
+2	
+"
+Tidxtype0:
+2	"
+output_typetype0	:
+2	
+x
+Assign
+ref"T�
+
+value"T
+
+output_ref"T�"	
+Ttype"
+validate_shapebool("
+use_lockingbool(�
+p
+	AssignAdd
+ref"T�
+
+value"T
+
+output_ref"T�"
+Ttype:
+2	
+"
+use_lockingbool( 
+p
+	AssignSub
+ref"T�
+
+value"T
+
+output_ref"T�"
+Ttype:
+2	
+"
+use_lockingbool( 
+{
+BiasAdd
+
+value"T	
+bias"T
+output"T"
+Ttype:
+2	
+"-
+data_formatstringNHWC:
+NHWCNCHW
+{
+BiasAddGrad
+out_backprop"T
+output"T"
+Ttype:
+2	
+"-
+data_formatstringNHWC:
+NHWCNCHW
+R
+BroadcastGradientArgs
+s0"T
+s1"T
+r0"T
+r1"T"
+Ttype0:
+2	
+8
+Cast	
+x"SrcT	
+y"DstT"
+SrcTtype"
+DstTtype
+8
+Const
+output"dtype"
+valuetensor"
+dtypetype
+S
+
+DynamicStitch
+indices*N
+data"T*N
+merged"T"
+Nint(0"	
+Ttype
+A
+Equal
+x"T
+y"T
+z
+"
+Ttype:
+2	
+
+�
+4
+Fill
+dims
+
+value"T
+output"T"	
+Ttype
+>
+FloorDiv
+x"T
+y"T
+z"T"
+Ttype:
+
+2	
+7
+FloorMod
+x"T
+y"T
+z"T"
+Ttype:
+2	
+?
+GreaterEqual
+x"T
+y"T
+z
+"
+Ttype:
+2		
+.
+Identity
+
+input"T
+output"T"	
+Ttype
+1
+L2Loss
+t"T
+output"T"
+Ttype:
+2
+<
+	LessEqual
+x"T
+y"T
+z
+"
+Ttype:
+2		
++
+Log
+x"T
+y"T"
+Ttype:	
+2
+o
+MatMul
+a"T
+b"T
+product"T"
+transpose_abool( "
+transpose_bbool( "
+Ttype:
+
+2
+:
+Maximum
+x"T
+y"T
+z"T"
+Ttype:	
+2	�
+�
+Mean
+
+input"T
+reduction_indices"Tidx
+output"T"
+	keep_dimsbool( "
+Ttype:
+2	
+"
+Tidxtype0:
+2	
+8
+MergeSummary
+inputs*N
+summary"
+Nint(0
+:
+Minimum
+x"T
+y"T
+z"T"
+Ttype:	
+2	�
+<
+Mul
+x"T
+y"T
+z"T"
+Ttype:
+
+2	�
+-
+Neg
+x"T
+y"T"
+Ttype:
+	2	
+
+NoOp
+M
+Pack
+values"T*N
+output"T"
+Nint(0"	
+Ttype"
+axisint 
+C
+Placeholder
+output"dtype"
+dtypetype"
+shapeshape:
+�
+Prod
+
+input"T
+reduction_indices"Tidx
+output"T"
+	keep_dimsbool( "
+Ttype:
+2	
+"
+Tidxtype0:
+2	
+`
+Range
+start"Tidx
+limit"Tidx
+delta"Tidx
+output"Tidx"
+Tidxtype0:
+2	
+=
+RealDiv
+x"T
+y"T
+z"T"
+Ttype:
+
+2	
+4
+
+Reciprocal
+x"T
+y"T"
+Ttype:
+	2	
+[
+Reshape
+tensor"T
+shape"Tshape
+output"T"	
+Ttype"
+Tshapetype0:
+2	
+o
+	RestoreV2
+
+prefix
+tensor_names
+shape_and_slices
+tensors2dtypes"
+dtypes
+list(type)(0�
+l
+SaveV2
+
+prefix
+tensor_names
+shape_and_slices
+tensors2dtypes"
+dtypes
+list(type)(0�
+M
+
+ScalarSummary
+tags
+values"T
+summary"
+Ttype:
+2		
+?
+Select
+	condition
+
+t"T
+e"T
+output"T"	
+Ttype
+P
+Shape
+
+input"T
+output"out_type"	
+Ttype"
+out_typetype0:
+2	
+8
+Softmax
+logits"T
+softmax"T"
+Ttype:
+2
+,
+Sqrt
+x"T
+y"T"
+Ttype:	
+2
+9
+Sub
+x"T
+y"T
+z"T"
+Ttype:
+
+2	
+�
+Sum
+
+input"T
+reduction_indices"Tidx
+output"T"
+	keep_dimsbool( "
+Ttype:
+2	
+"
+Tidxtype0:
+2	
+c
+Tile
+
+input"T
+	multiples"
+Tmultiples
+output"T"	
+Ttype"
+
+Tmultiplestype0:
+2	
+
+TruncatedNormal
+
+shape"T
+output"dtype"
+seedint "
+seed2int "
+dtypetype:
+2"
+Ttype:
+2	�
+s
+
+VariableV2
+ref"dtype�"
+shapeshape"
+dtypetype"
+	containerstring "
+shared_namestring �*1.4.02
+b'unknown'��
+p
+InputData/XPlaceholder*
+shape:����������*
+dtype0*(
+_output_shapes
+:����������
+�
+3FullyConnected/W/Initializer/truncated_normal/shapeConst*
+valueB"�   
+   *#
+_class
+loc:@FullyConnected/W*
+dtype0*
+_output_shapes
+:
+�
+2FullyConnected/W/Initializer/truncated_normal/meanConst*
+valueB
+ *    *#
+_class
+loc:@FullyConnected/W*
+dtype0*
+_output_shapes
+: 
+�
+4FullyConnected/W/Initializer/truncated_normal/stddevConst*
+valueB
+ *
+ף<*#
+_class
+loc:@FullyConnected/W*
+dtype0*
+_output_shapes
+: 
+�
+=FullyConnected/W/Initializer/truncated_normal/TruncatedNormalTruncatedNormal3FullyConnected/W/Initializer/truncated_normal/shape*
+
+seed *
+T0*#
+_class
+loc:@FullyConnected/W*
+seed2 *
+dtype0*
+_output_shapes
+:	�
+
+�
+1FullyConnected/W/Initializer/truncated_normal/mulMul=FullyConnected/W/Initializer/truncated_normal/TruncatedNormal4FullyConnected/W/Initializer/truncated_normal/stddev*
+T0*#
+_class
+loc:@FullyConnected/W*
+_output_shapes
+:	�
+
+�
+-FullyConnected/W/Initializer/truncated_normalAdd1FullyConnected/W/Initializer/truncated_normal/mul2FullyConnected/W/Initializer/truncated_normal/mean*
+T0*#
+_class
+loc:@FullyConnected/W*
+_output_shapes
+:	�
+
+�
+FullyConnected/W
+VariableV2*
+shared_name *#
+_class
+loc:@FullyConnected/W*
+	container *
+shape:	�
+*
+dtype0*
+_output_shapes
+:	�
+
+�
+FullyConnected/W/AssignAssignFullyConnected/W-FullyConnected/W/Initializer/truncated_normal*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+�
+FullyConnected/W/readIdentityFullyConnected/W*
+T0*#
+_class
+loc:@FullyConnected/W*
+_output_shapes
+:	�
+
+�
+"FullyConnected/b/Initializer/ConstConst*
+valueB
+*    *#
+_class
+loc:@FullyConnected/b*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected/b
+VariableV2*
+shared_name *#
+_class
+loc:@FullyConnected/b*
+	container *
+shape:
+*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected/b/AssignAssignFullyConnected/b"FullyConnected/b/Initializer/Const*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+}
+FullyConnected/b/readIdentityFullyConnected/b*
+T0*#
+_class
+loc:@FullyConnected/b*
+_output_shapes
+:
+
+�
+FullyConnected/MatMulMatMulInputData/XFullyConnected/W/read*
+transpose_b( *
+T0*
+transpose_a( *'
+_output_shapes
+:���������
+
+�
+FullyConnected/BiasAddBiasAddFullyConnected/MatMulFullyConnected/b/read*
+T0*
+data_formatNHWC*'
+_output_shapes
+:���������
+
+�
+5FullyConnected_1/W/Initializer/truncated_normal/shapeConst*
+valueB"
+   
+   *%
+_class
+loc:@FullyConnected_1/W*
+dtype0*
+_output_shapes
+:
+�
+4FullyConnected_1/W/Initializer/truncated_normal/meanConst*
+valueB
+ *    *%
+_class
+loc:@FullyConnected_1/W*
+dtype0*
+_output_shapes
+: 
+�
+6FullyConnected_1/W/Initializer/truncated_normal/stddevConst*
+valueB
+ *
+ף<*%
+_class
+loc:@FullyConnected_1/W*
+dtype0*
+_output_shapes
+: 
+�
+?FullyConnected_1/W/Initializer/truncated_normal/TruncatedNormalTruncatedNormal5FullyConnected_1/W/Initializer/truncated_normal/shape*
+
+seed *
+T0*%
+_class
+loc:@FullyConnected_1/W*
+seed2 *
+dtype0*
+_output_shapes
+
+:
+
+
+�
+3FullyConnected_1/W/Initializer/truncated_normal/mulMul?FullyConnected_1/W/Initializer/truncated_normal/TruncatedNormal6FullyConnected_1/W/Initializer/truncated_normal/stddev*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+_output_shapes
+
+:
+
+
+�
+/FullyConnected_1/W/Initializer/truncated_normalAdd3FullyConnected_1/W/Initializer/truncated_normal/mul4FullyConnected_1/W/Initializer/truncated_normal/mean*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+_output_shapes
+
+:
+
+
+�
+FullyConnected_1/W
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_1/W*
+	container *
+shape
+:
+
+*
+dtype0*
+_output_shapes
+
+:
+
+
+�
+FullyConnected_1/W/AssignAssignFullyConnected_1/W/FullyConnected_1/W/Initializer/truncated_normal*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+�
+FullyConnected_1/W/readIdentityFullyConnected_1/W*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+_output_shapes
+
+:
+
+
+�
+$FullyConnected_1/b/Initializer/ConstConst*
+valueB
+*    *%
+_class
+loc:@FullyConnected_1/b*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected_1/b
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_1/b*
+	container *
+shape:
+*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected_1/b/AssignAssignFullyConnected_1/b$FullyConnected_1/b/Initializer/Const*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+FullyConnected_1/b/readIdentityFullyConnected_1/b*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+_output_shapes
+:
+
+�
+FullyConnected_1/MatMulMatMulFullyConnected/BiasAddFullyConnected_1/W/read*
+transpose_b( *
+T0*
+transpose_a( *'
+_output_shapes
+:���������
+
+�
+FullyConnected_1/BiasAddBiasAddFullyConnected_1/MatMulFullyConnected_1/b/read*
+T0*
+data_formatNHWC*'
+_output_shapes
+:���������
+
+�
+5FullyConnected_2/W/Initializer/truncated_normal/shapeConst*
+valueB"
+      *%
+_class
+loc:@FullyConnected_2/W*
+dtype0*
+_output_shapes
+:
+�
+4FullyConnected_2/W/Initializer/truncated_normal/meanConst*
+valueB
+ *    *%
+_class
+loc:@FullyConnected_2/W*
+dtype0*
+_output_shapes
+: 
+�
+6FullyConnected_2/W/Initializer/truncated_normal/stddevConst*
+valueB
+ *
+ף<*%
+_class
+loc:@FullyConnected_2/W*
+dtype0*
+_output_shapes
+: 
+�
+?FullyConnected_2/W/Initializer/truncated_normal/TruncatedNormalTruncatedNormal5FullyConnected_2/W/Initializer/truncated_normal/shape*
+
+seed *
+T0*%
+_class
+loc:@FullyConnected_2/W*
+seed2 *
+dtype0*
+_output_shapes
+
+:
+
+�
+3FullyConnected_2/W/Initializer/truncated_normal/mulMul?FullyConnected_2/W/Initializer/truncated_normal/TruncatedNormal6FullyConnected_2/W/Initializer/truncated_normal/stddev*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+_output_shapes
+
+:
+
+�
+/FullyConnected_2/W/Initializer/truncated_normalAdd3FullyConnected_2/W/Initializer/truncated_normal/mul4FullyConnected_2/W/Initializer/truncated_normal/mean*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+_output_shapes
+
+:
+
+�
+FullyConnected_2/W
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_2/W*
+	container *
+shape
+:
+*
+dtype0*
+_output_shapes
+
+:
+
+�
+FullyConnected_2/W/AssignAssignFullyConnected_2/W/FullyConnected_2/W/Initializer/truncated_normal*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+�
+FullyConnected_2/W/readIdentityFullyConnected_2/W*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+_output_shapes
+
+:
+
+�
+$FullyConnected_2/b/Initializer/ConstConst*
+valueB*    *%
+_class
+loc:@FullyConnected_2/b*
+dtype0*
+_output_shapes
+:
+�
+FullyConnected_2/b
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_2/b*
+	container *
+shape:*
+dtype0*
+_output_shapes
+:
+�
+FullyConnected_2/b/AssignAssignFullyConnected_2/b$FullyConnected_2/b/Initializer/Const*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+�
+FullyConnected_2/b/readIdentityFullyConnected_2/b*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+_output_shapes
+:
+�
+FullyConnected_2/MatMulMatMulFullyConnected_1/BiasAddFullyConnected_2/W/read*
+transpose_b( *
+T0*
+transpose_a( *'
+_output_shapes
+:���������
+�
+FullyConnected_2/BiasAddBiasAddFullyConnected_2/MatMulFullyConnected_2/b/read*
+T0*
+data_formatNHWC*'
+_output_shapes
+:���������
+o
+FullyConnected_2/SoftmaxSoftmaxFullyConnected_2/BiasAdd*
+T0*'
+_output_shapes
+:���������
+p
+
+TargetsData/YPlaceholder*
+shape:���������*
+dtype0*'
+_output_shapes
+:���������
+[
+Accuracy/ArgMax/dimensionConst*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+Accuracy/ArgMaxArgMaxFullyConnected_2/SoftmaxAccuracy/ArgMax/dimension*
+
+Tidx0*
+T0*
+output_type0	*#
+_output_shapes
+:
+���������
+]
+Accuracy/ArgMax_1/dimensionConst*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+Accuracy/ArgMax_1ArgMax
+TargetsData/YAccuracy/ArgMax_1/dimension*
+
+Tidx0*
+T0*
+output_type0	*#
+_output_shapes
+:
+���������
+i
+Accuracy/EqualEqualAccuracy/ArgMaxAccuracy/ArgMax_1*
+T0	*#
+_output_shapes
+:
+���������
+b
+
+Accuracy/CastCastAccuracy/Equal*
+
+SrcT0
+*
+
+DstT0*#
+_output_shapes
+:
+���������
+X
+Accuracy/ConstConst*
+value
+B: *
+dtype0*
+_output_shapes
+:
+r
+
+Accuracy/MeanMean
+Accuracy/CastAccuracy/Const*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+: 
+d
+"Crossentropy/Sum/reduction_indicesConst*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+Crossentropy/SumSumFullyConnected_2/Softmax"Crossentropy/Sum/reduction_indices*
+	keep_dims(*
+
+Tidx0*
+T0*'
+_output_shapes
+:���������
+}
+Crossentropy/truedivRealDivFullyConnected_2/SoftmaxCrossentropy/Sum*
+T0*'
+_output_shapes
+:���������
+X
+Crossentropy/Cast/xConst*
+valueB
+ *���.*
+dtype0*
+_output_shapes
+: 
+Z
+Crossentropy/Cast_1/xConst*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+�
+"Crossentropy/clip_by_value/MinimumMinimumCrossentropy/truedivCrossentropy/Cast_1/x*
+T0*'
+_output_shapes
+:���������
+�
+Crossentropy/clip_by_valueMaximum"Crossentropy/clip_by_value/MinimumCrossentropy/Cast/x*
+T0*'
+_output_shapes
+:���������
+e
+Crossentropy/LogLogCrossentropy/clip_by_value*
+T0*'
+_output_shapes
+:���������
+j
+Crossentropy/mulMul
+TargetsData/YCrossentropy/Log*
+T0*'
+_output_shapes
+:���������
+f
+$Crossentropy/Sum_1/reduction_indicesConst*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+Crossentropy/Sum_1SumCrossentropy/mul$Crossentropy/Sum_1/reduction_indices*
+	keep_dims( *
+
+Tidx0*
+T0*#
+_output_shapes
+:
+���������
+Y
+Crossentropy/NegNegCrossentropy/Sum_1*
+T0*#
+_output_shapes
+:
+���������
+\
+Crossentropy/ConstConst*
+value
+B: *
+dtype0*
+_output_shapes
+:
+}
+Crossentropy/MeanMeanCrossentropy/NegCrossentropy/Const*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+: 
+`
+Training_step/initial_valueConst*
+valueB
+ *    *
+dtype0*
+_output_shapes
+: 
+q
+
+Training_step
+VariableV2*
+shape: *
+shared_name *
+dtype0*
+	container *
+_output_shapes
+: 
+�
+Training_step/AssignAssign
+Training_stepTraining_step/initial_value*
+use_locking(*
+T0* 
+_class
+loc:@Training_step*
+validate_shape(*
+_output_shapes
+: 
+p
+Training_step/readIdentity
+Training_step*
+T0* 
+_class
+loc:@Training_step*
+_output_shapes
+: 
+
+is_training/Initializer/ConstConst*
+value	B
+ Z *
+_class
+loc:@is_training*
+dtype0
+*
+_output_shapes
+: 
+�
+is_training
+VariableV2*
+shared_name *
+_class
+loc:@is_training*
+	container *
+shape: *
+dtype0
+*
+_output_shapes
+: 
+�
+is_training/AssignAssignis_trainingis_training/Initializer/Const*
+use_locking(*
+T0
+*
+_class
+loc:@is_training*
+validate_shape(*
+_output_shapes
+: 
+j
+is_training/readIdentityis_training*
+T0
+*
+_class
+loc:@is_training*
+_output_shapes
+: 
+N
+Assign/valueConst*
+value	B
+ Z*
+dtype0
+*
+_output_shapes
+: 
+�
+AssignAssignis_trainingAssign/value*
+use_locking(*
+T0
+*
+_class
+loc:@is_training*
+validate_shape(*
+_output_shapes
+: 
+P
+Assign_1/valueConst*
+value	B
+ Z *
+dtype0
+*
+_output_shapes
+: 
+�
+Assign_1Assignis_trainingAssign_1/value*
+use_locking(*
+T0
+*
+_class
+loc:@is_training*
+validate_shape(*
+_output_shapes
+: 
+^
+Global_Step/initial_valueConst*
+valueB
+ *    *
+dtype0*
+_output_shapes
+: 
+o
+Global_Step
+VariableV2*
+shape: *
+shared_name *
+dtype0*
+	container *
+_output_shapes
+: 
+�
+Global_Step/AssignAssignGlobal_StepGlobal_Step/initial_value*
+use_locking(*
+T0*
+_class
+loc:@Global_Step*
+validate_shape(*
+_output_shapes
+: 
+j
+Global_Step/readIdentityGlobal_Step*
+T0*
+_class
+loc:@Global_Step*
+_output_shapes
+: 
+J
+Add/yConst*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+D
+AddAddGlobal_Step/readAdd/y*
+T0*
+_output_shapes
+: 
+�
+Assign_2AssignGlobal_StepAdd*
+use_locking(*
+T0*
+_class
+loc:@Global_Step*
+validate_shape(*
+_output_shapes
+: 
+[
+val_loss/initial_valueConst*
+valueB
+ *    *
+dtype0*
+_output_shapes
+: 
+l
+val_loss
+VariableV2*
+shape: *
+shared_name *
+dtype0*
+	container *
+_output_shapes
+: 
+�
+val_loss/AssignAssignval_lossval_loss/initial_value*
+use_locking(*
+T0*
+_class
+
+loc:@val_loss*
+validate_shape(*
+_output_shapes
+: 
+a
+
+val_loss/readIdentityval_loss*
+T0*
+_class
+
+loc:@val_loss*
+_output_shapes
+: 
+Z
+val_acc/initial_valueConst*
+valueB
+ *    *
+dtype0*
+_output_shapes
+: 
+k
+val_acc
+VariableV2*
+shape: *
+shared_name *
+dtype0*
+	container *
+_output_shapes
+: 
+�
+val_acc/AssignAssignval_accval_acc/initial_value*
+use_locking(*
+T0*
+_class
+loc:@val_acc*
+validate_shape(*
+_output_shapes
+: 
+^
+val_acc/readIdentityval_acc*
+T0*
+_class
+loc:@val_acc*
+_output_shapes
+: 
+Y
+placeholder/val_lossPlaceholder*
+shape:*
+dtype0*
+_output_shapes
+:
+X
+placeholder/val_accPlaceholder*
+shape:*
+dtype0*
+_output_shapes
+:
+�
+assign/val_lossAssignval_lossplaceholder/val_loss*
+use_locking(*
+T0*
+_class
+
+loc:@val_loss*
+validate_shape(*
+_output_shapes
+: 
+�
+assign/val_accAssignval_accplaceholder/val_acc*
+use_locking(*
+T0*
+_class
+loc:@val_acc*
+validate_shape(*
+_output_shapes
+: 
+�
+*Accuracy/Mean/moving_avg/Initializer/zerosConst*
+valueB
+ *    *+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+dtype0*
+_output_shapes
+: 
+�
+Accuracy/Mean/moving_avg
+VariableV2*
+shared_name *+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+	container *
+shape: *
+dtype0*
+_output_shapes
+: 
+�
+Accuracy/Mean/moving_avg/AssignAssignAccuracy/Mean/moving_avg*Accuracy/Mean/moving_avg/Initializer/zeros*
+use_locking(*
+T0*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+validate_shape(*
+_output_shapes
+: 
+�
+Accuracy/Mean/moving_avg/readIdentityAccuracy/Mean/moving_avg*
+T0*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+_output_shapes
+: 
+U
+moving_avg/decayConst*
+valueB
+ *fff?*
+dtype0*
+_output_shapes
+: 
+U
+moving_avg/add/xConst*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+\
+moving_avg/addAddmoving_avg/add/xTraining_step/read*
+T0*
+_output_shapes
+: 
+W
+moving_avg/add_1/xConst*
+valueB
+ *   A*
+dtype0*
+_output_shapes
+: 
+`
+moving_avg/add_1Addmoving_avg/add_1/xTraining_step/read*
+T0*
+_output_shapes
+: 
+`
+moving_avg/truedivRealDivmoving_avg/addmoving_avg/add_1*
+T0*
+_output_shapes
+: 
+d
+moving_avg/MinimumMinimummoving_avg/decaymoving_avg/truediv*
+T0*
+_output_shapes
+: 
+�
+ moving_avg/AssignMovingAvg/sub/xConst*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+�
+moving_avg/AssignMovingAvg/subSub moving_avg/AssignMovingAvg/sub/xmoving_avg/Minimum*
+T0*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+_output_shapes
+: 
+�
+ moving_avg/AssignMovingAvg/sub_1SubAccuracy/Mean/moving_avg/read
+Accuracy/Mean*
+T0*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+_output_shapes
+: 
+�
+moving_avg/AssignMovingAvg/mulMul moving_avg/AssignMovingAvg/sub_1moving_avg/AssignMovingAvg/sub*
+T0*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+_output_shapes
+: 
+�
+moving_avg/AssignMovingAvg	AssignSubAccuracy/Mean/moving_avgmoving_avg/AssignMovingAvg/mul*
+use_locking( *
+T0*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+_output_shapes
+: 
+/
+
+moving_avgNoOp^moving_avg/AssignMovingAvg
+O
+Adam/Total_LossIdentityCrossentropy/Mean*
+T0*
+_output_shapes
+: 
+�
+.Crossentropy/Mean/moving_avg/Initializer/zerosConst*
+valueB
+ *    */
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+dtype0*
+_output_shapes
+: 
+�
+Crossentropy/Mean/moving_avg
+VariableV2*
+shared_name */
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+	container *
+shape: *
+dtype0*
+_output_shapes
+: 
+�
+#Crossentropy/Mean/moving_avg/AssignAssignCrossentropy/Mean/moving_avg.Crossentropy/Mean/moving_avg/Initializer/zeros*
+use_locking(*
+T0*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+validate_shape(*
+_output_shapes
+: 
+�
+!Crossentropy/Mean/moving_avg/readIdentityCrossentropy/Mean/moving_avg*
+T0*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+_output_shapes
+: 
+Z
+Adam/moving_avg/decayConst*
+valueB
+ *fff?*
+dtype0*
+_output_shapes
+: 
+Z
+Adam/moving_avg/add/xConst*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+f
+Adam/moving_avg/addAddAdam/moving_avg/add/xTraining_step/read*
+T0*
+_output_shapes
+: 
+\
+Adam/moving_avg/add_1/xConst*
+valueB
+ *   A*
+dtype0*
+_output_shapes
+: 
+j
+Adam/moving_avg/add_1AddAdam/moving_avg/add_1/xTraining_step/read*
+T0*
+_output_shapes
+: 
+o
+Adam/moving_avg/truedivRealDivAdam/moving_avg/addAdam/moving_avg/add_1*
+T0*
+_output_shapes
+: 
+s
+Adam/moving_avg/MinimumMinimumAdam/moving_avg/decayAdam/moving_avg/truediv*
+T0*
+_output_shapes
+: 
+�
+%Adam/moving_avg/AssignMovingAvg/sub/xConst*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+�
+#Adam/moving_avg/AssignMovingAvg/subSub%Adam/moving_avg/AssignMovingAvg/sub/xAdam/moving_avg/Minimum*
+T0*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+_output_shapes
+: 
+�
+%Adam/moving_avg/AssignMovingAvg/sub_1Sub!Crossentropy/Mean/moving_avg/readCrossentropy/Mean*
+T0*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+_output_shapes
+: 
+�
+#Adam/moving_avg/AssignMovingAvg/mulMul%Adam/moving_avg/AssignMovingAvg/sub_1#Adam/moving_avg/AssignMovingAvg/sub*
+T0*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+_output_shapes
+: 
+�
+Adam/moving_avg/AssignMovingAvg	AssignSubCrossentropy/Mean/moving_avg#Adam/moving_avg/AssignMovingAvg/mul*
+use_locking( *
+T0*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+_output_shapes
+: 
+9
+Adam/moving_avgNoOp ^Adam/moving_avg/AssignMovingAvg
+N
+	Loss/tagsConst*
+valueB
+ BLoss*
+dtype0*
+_output_shapes
+: 
+d
+Loss
+ScalarSummary	Loss/tags!Crossentropy/Mean/moving_avg/read*
+T0*
+_output_shapes
+: 
+`
+Adam/Loss/raw/tagsConst*
+valueB B
+Adam/Loss/raw*
+dtype0*
+_output_shapes
+: 
+f
+
+Adam/Loss/raw
+ScalarSummaryAdam/Loss/raw/tagsCrossentropy/Mean*
+T0*
+_output_shapes
+: 
+v
+Adam/gradients/ShapeConst^Adam/moving_avg^moving_avg*
+valueB *
+dtype0*
+_output_shapes
+: 
+x
+Adam/gradients/ConstConst^Adam/moving_avg^moving_avg*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+h
+Adam/gradients/FillFillAdam/gradients/ShapeAdam/gradients/Const*
+T0*
+_output_shapes
+: 
+�
+3Adam/gradients/Crossentropy/Mean_grad/Reshape/shapeConst^Adam/moving_avg^moving_avg*
+value
+B:*
+dtype0*
+_output_shapes
+:
+�
+-Adam/gradients/Crossentropy/Mean_grad/ReshapeReshapeAdam/gradients/Fill3Adam/gradients/Crossentropy/Mean_grad/Reshape/shape*
+T0*
+Tshape0*
+_output_shapes
+:
+�
++Adam/gradients/Crossentropy/Mean_grad/ShapeShapeCrossentropy/Neg^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
+*Adam/gradients/Crossentropy/Mean_grad/TileTile-Adam/gradients/Crossentropy/Mean_grad/Reshape+Adam/gradients/Crossentropy/Mean_grad/Shape*
+
+Tmultiples0*
+T0*#
+_output_shapes
+:
+���������
+�
+-Adam/gradients/Crossentropy/Mean_grad/Shape_1ShapeCrossentropy/Neg^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
+-Adam/gradients/Crossentropy/Mean_grad/Shape_2Const^Adam/moving_avg^moving_avg*
+valueB *
+dtype0*
+_output_shapes
+: 
+�
++Adam/gradients/Crossentropy/Mean_grad/ConstConst^Adam/moving_avg^moving_avg*@
+_class6
+42loc:@Adam/gradients/Crossentropy/Mean_grad/Shape_1*
+value
+B: *
+dtype0*
+_output_shapes
+:
+�
+*Adam/gradients/Crossentropy/Mean_grad/ProdProd-Adam/gradients/Crossentropy/Mean_grad/Shape_1+Adam/gradients/Crossentropy/Mean_grad/Const*
+	keep_dims( *
+
+Tidx0*
+T0*@
+_class6
+42loc:@Adam/gradients/Crossentropy/Mean_grad/Shape_1*
+_output_shapes
+: 
+�
+-Adam/gradients/Crossentropy/Mean_grad/Const_1Const^Adam/moving_avg^moving_avg*@
+_class6
+42loc:@Adam/gradients/Crossentropy/Mean_grad/Shape_1*
+value
+B: *
+dtype0*
+_output_shapes
+:
+�
+,Adam/gradients/Crossentropy/Mean_grad/Prod_1Prod-Adam/gradients/Crossentropy/Mean_grad/Shape_2-Adam/gradients/Crossentropy/Mean_grad/Const_1*
+	keep_dims( *
+
+Tidx0*
+T0*@
+_class6
+42loc:@Adam/gradients/Crossentropy/Mean_grad/Shape_1*
+_output_shapes
+: 
+�
+/Adam/gradients/Crossentropy/Mean_grad/Maximum/yConst^Adam/moving_avg^moving_avg*@
+_class6
+42loc:@Adam/gradients/Crossentropy/Mean_grad/Shape_1*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+-Adam/gradients/Crossentropy/Mean_grad/MaximumMaximum,Adam/gradients/Crossentropy/Mean_grad/Prod_1/Adam/gradients/Crossentropy/Mean_grad/Maximum/y*
+T0*@
+_class6
+42loc:@Adam/gradients/Crossentropy/Mean_grad/Shape_1*
+_output_shapes
+: 
+�
+.Adam/gradients/Crossentropy/Mean_grad/floordivFloorDiv*Adam/gradients/Crossentropy/Mean_grad/Prod-Adam/gradients/Crossentropy/Mean_grad/Maximum*
+T0*@
+_class6
+42loc:@Adam/gradients/Crossentropy/Mean_grad/Shape_1*
+_output_shapes
+: 
+�
+*Adam/gradients/Crossentropy/Mean_grad/CastCast.Adam/gradients/Crossentropy/Mean_grad/floordiv*
+
+SrcT0*
+
+DstT0*
+_output_shapes
+: 
+�
+-Adam/gradients/Crossentropy/Mean_grad/truedivRealDiv*Adam/gradients/Crossentropy/Mean_grad/Tile*Adam/gradients/Crossentropy/Mean_grad/Cast*
+T0*#
+_output_shapes
+:
+���������
+�
+(Adam/gradients/Crossentropy/Neg_grad/NegNeg-Adam/gradients/Crossentropy/Mean_grad/truediv*
+T0*#
+_output_shapes
+:
+���������
+�
+,Adam/gradients/Crossentropy/Sum_1_grad/ShapeShapeCrossentropy/mul^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
++Adam/gradients/Crossentropy/Sum_1_grad/SizeConst^Adam/moving_avg^moving_avg*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+*Adam/gradients/Crossentropy/Sum_1_grad/addAdd$Crossentropy/Sum_1/reduction_indices+Adam/gradients/Crossentropy/Sum_1_grad/Size*
+T0*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+_output_shapes
+: 
+�
+*Adam/gradients/Crossentropy/Sum_1_grad/modFloorMod*Adam/gradients/Crossentropy/Sum_1_grad/add+Adam/gradients/Crossentropy/Sum_1_grad/Size*
+T0*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+_output_shapes
+: 
+�
+.Adam/gradients/Crossentropy/Sum_1_grad/Shape_1Const^Adam/moving_avg^moving_avg*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+valueB *
+dtype0*
+_output_shapes
+: 
+�
+2Adam/gradients/Crossentropy/Sum_1_grad/range/startConst^Adam/moving_avg^moving_avg*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+value	B : *
+dtype0*
+_output_shapes
+: 
+�
+2Adam/gradients/Crossentropy/Sum_1_grad/range/deltaConst^Adam/moving_avg^moving_avg*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+,Adam/gradients/Crossentropy/Sum_1_grad/rangeRange2Adam/gradients/Crossentropy/Sum_1_grad/range/start+Adam/gradients/Crossentropy/Sum_1_grad/Size2Adam/gradients/Crossentropy/Sum_1_grad/range/delta*
+
+Tidx0*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+_output_shapes
+:
+�
+1Adam/gradients/Crossentropy/Sum_1_grad/Fill/valueConst^Adam/moving_avg^moving_avg*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
++Adam/gradients/Crossentropy/Sum_1_grad/FillFill.Adam/gradients/Crossentropy/Sum_1_grad/Shape_11Adam/gradients/Crossentropy/Sum_1_grad/Fill/value*
+T0*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+_output_shapes
+: 
+�
+4Adam/gradients/Crossentropy/Sum_1_grad/DynamicStitch
+DynamicStitch,Adam/gradients/Crossentropy/Sum_1_grad/range*Adam/gradients/Crossentropy/Sum_1_grad/mod,Adam/gradients/Crossentropy/Sum_1_grad/Shape+Adam/gradients/Crossentropy/Sum_1_grad/Fill*
+T0*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+N*#
+_output_shapes
+:
+���������
+�
+0Adam/gradients/Crossentropy/Sum_1_grad/Maximum/yConst^Adam/moving_avg^moving_avg*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+.Adam/gradients/Crossentropy/Sum_1_grad/MaximumMaximum4Adam/gradients/Crossentropy/Sum_1_grad/DynamicStitch0Adam/gradients/Crossentropy/Sum_1_grad/Maximum/y*
+T0*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*#
+_output_shapes
+:
+���������
+�
+/Adam/gradients/Crossentropy/Sum_1_grad/floordivFloorDiv,Adam/gradients/Crossentropy/Sum_1_grad/Shape.Adam/gradients/Crossentropy/Sum_1_grad/Maximum*
+T0*?
+_class5
+31loc:@Adam/gradients/Crossentropy/Sum_1_grad/Shape*
+_output_shapes
+:
+�
+.Adam/gradients/Crossentropy/Sum_1_grad/ReshapeReshape(Adam/gradients/Crossentropy/Neg_grad/Neg4Adam/gradients/Crossentropy/Sum_1_grad/DynamicStitch*
+T0*
+Tshape0*
+_output_shapes
+:
+�
++Adam/gradients/Crossentropy/Sum_1_grad/TileTile.Adam/gradients/Crossentropy/Sum_1_grad/Reshape/Adam/gradients/Crossentropy/Sum_1_grad/floordiv*
+
+Tmultiples0*
+T0*'
+_output_shapes
+:���������
+�
+*Adam/gradients/Crossentropy/mul_grad/ShapeShape
+TargetsData/Y^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
+,Adam/gradients/Crossentropy/mul_grad/Shape_1ShapeCrossentropy/Log^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
+:Adam/gradients/Crossentropy/mul_grad/BroadcastGradientArgsBroadcastGradientArgs*Adam/gradients/Crossentropy/mul_grad/Shape,Adam/gradients/Crossentropy/mul_grad/Shape_1*
+T0*2
+_output_shapes 
+:
+���������:
+���������
+�
+(Adam/gradients/Crossentropy/mul_grad/mulMul+Adam/gradients/Crossentropy/Sum_1_grad/TileCrossentropy/Log*
+T0*'
+_output_shapes
+:���������
+�
+(Adam/gradients/Crossentropy/mul_grad/SumSum(Adam/gradients/Crossentropy/mul_grad/mul:Adam/gradients/Crossentropy/mul_grad/BroadcastGradientArgs*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+:
+�
+,Adam/gradients/Crossentropy/mul_grad/ReshapeReshape(Adam/gradients/Crossentropy/mul_grad/Sum*Adam/gradients/Crossentropy/mul_grad/Shape*
+T0*
+Tshape0*'
+_output_shapes
+:���������
+�
+*Adam/gradients/Crossentropy/mul_grad/mul_1Mul
+TargetsData/Y+Adam/gradients/Crossentropy/Sum_1_grad/Tile*
+T0*'
+_output_shapes
+:���������
+�
+*Adam/gradients/Crossentropy/mul_grad/Sum_1Sum*Adam/gradients/Crossentropy/mul_grad/mul_1<Adam/gradients/Crossentropy/mul_grad/BroadcastGradientArgs:1*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+:
+�
+.Adam/gradients/Crossentropy/mul_grad/Reshape_1Reshape*Adam/gradients/Crossentropy/mul_grad/Sum_1,Adam/gradients/Crossentropy/mul_grad/Shape_1*
+T0*
+Tshape0*'
+_output_shapes
+:���������
+�
+/Adam/gradients/Crossentropy/Log_grad/Reciprocal
+ReciprocalCrossentropy/clip_by_value^Adam/moving_avg^moving_avg/^Adam/gradients/Crossentropy/mul_grad/Reshape_1*
+T0*'
+_output_shapes
+:���������
+�
+(Adam/gradients/Crossentropy/Log_grad/mulMul.Adam/gradients/Crossentropy/mul_grad/Reshape_1/Adam/gradients/Crossentropy/Log_grad/Reciprocal*
+T0*'
+_output_shapes
+:���������
+�
+4Adam/gradients/Crossentropy/clip_by_value_grad/ShapeShape"Crossentropy/clip_by_value/Minimum^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
+6Adam/gradients/Crossentropy/clip_by_value_grad/Shape_1Const^Adam/moving_avg^moving_avg*
+valueB *
+dtype0*
+_output_shapes
+: 
+�
+6Adam/gradients/Crossentropy/clip_by_value_grad/Shape_2Shape(Adam/gradients/Crossentropy/Log_grad/mul*
+T0*
+out_type0*
+_output_shapes
+:
+�
+:Adam/gradients/Crossentropy/clip_by_value_grad/zeros/ConstConst^Adam/moving_avg^moving_avg*
+valueB
+ *    *
+dtype0*
+_output_shapes
+: 
+�
+4Adam/gradients/Crossentropy/clip_by_value_grad/zerosFill6Adam/gradients/Crossentropy/clip_by_value_grad/Shape_2:Adam/gradients/Crossentropy/clip_by_value_grad/zeros/Const*
+T0*'
+_output_shapes
+:���������
+�
+;Adam/gradients/Crossentropy/clip_by_value_grad/GreaterEqualGreaterEqual"Crossentropy/clip_by_value/MinimumCrossentropy/Cast/x^Adam/moving_avg^moving_avg*
+T0*'
+_output_shapes
+:���������
+�
+DAdam/gradients/Crossentropy/clip_by_value_grad/BroadcastGradientArgsBroadcastGradientArgs4Adam/gradients/Crossentropy/clip_by_value_grad/Shape6Adam/gradients/Crossentropy/clip_by_value_grad/Shape_1*
+T0*2
+_output_shapes 
+:
+���������:
+���������
+�
+5Adam/gradients/Crossentropy/clip_by_value_grad/SelectSelect;Adam/gradients/Crossentropy/clip_by_value_grad/GreaterEqual(Adam/gradients/Crossentropy/Log_grad/mul4Adam/gradients/Crossentropy/clip_by_value_grad/zeros*
+T0*'
+_output_shapes
+:���������
+�
+7Adam/gradients/Crossentropy/clip_by_value_grad/Select_1Select;Adam/gradients/Crossentropy/clip_by_value_grad/GreaterEqual4Adam/gradients/Crossentropy/clip_by_value_grad/zeros(Adam/gradients/Crossentropy/Log_grad/mul*
+T0*'
+_output_shapes
+:���������
+�
+2Adam/gradients/Crossentropy/clip_by_value_grad/SumSum5Adam/gradients/Crossentropy/clip_by_value_grad/SelectDAdam/gradients/Crossentropy/clip_by_value_grad/BroadcastGradientArgs*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+:
+�
+6Adam/gradients/Crossentropy/clip_by_value_grad/ReshapeReshape2Adam/gradients/Crossentropy/clip_by_value_grad/Sum4Adam/gradients/Crossentropy/clip_by_value_grad/Shape*
+T0*
+Tshape0*'
+_output_shapes
+:���������
+�
+4Adam/gradients/Crossentropy/clip_by_value_grad/Sum_1Sum7Adam/gradients/Crossentropy/clip_by_value_grad/Select_1FAdam/gradients/Crossentropy/clip_by_value_grad/BroadcastGradientArgs:1*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+:
+�
+8Adam/gradients/Crossentropy/clip_by_value_grad/Reshape_1Reshape4Adam/gradients/Crossentropy/clip_by_value_grad/Sum_16Adam/gradients/Crossentropy/clip_by_value_grad/Shape_1*
+T0*
+Tshape0*
+_output_shapes
+: 
+�
+<Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/ShapeShapeCrossentropy/truediv^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
+>Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Shape_1Const^Adam/moving_avg^moving_avg*
+valueB *
+dtype0*
+_output_shapes
+: 
+�
+>Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Shape_2Shape6Adam/gradients/Crossentropy/clip_by_value_grad/Reshape*
+T0*
+out_type0*
+_output_shapes
+:
+�
+BAdam/gradients/Crossentropy/clip_by_value/Minimum_grad/zeros/ConstConst^Adam/moving_avg^moving_avg*
+valueB
+ *    *
+dtype0*
+_output_shapes
+: 
+�
+<Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/zerosFill>Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Shape_2BAdam/gradients/Crossentropy/clip_by_value/Minimum_grad/zeros/Const*
+T0*'
+_output_shapes
+:���������
+�
+@Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/LessEqual	LessEqualCrossentropy/truedivCrossentropy/Cast_1/x^Adam/moving_avg^moving_avg*
+T0*'
+_output_shapes
+:���������
+�
+LAdam/gradients/Crossentropy/clip_by_value/Minimum_grad/BroadcastGradientArgsBroadcastGradientArgs<Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Shape>Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Shape_1*
+T0*2
+_output_shapes 
+:
+���������:
+���������
+�
+=Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/SelectSelect@Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/LessEqual6Adam/gradients/Crossentropy/clip_by_value_grad/Reshape<Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/zeros*
+T0*'
+_output_shapes
+:���������
+�
+?Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Select_1Select@Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/LessEqual<Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/zeros6Adam/gradients/Crossentropy/clip_by_value_grad/Reshape*
+T0*'
+_output_shapes
+:���������
+�
+:Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/SumSum=Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/SelectLAdam/gradients/Crossentropy/clip_by_value/Minimum_grad/BroadcastGradientArgs*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+:
+�
+>Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/ReshapeReshape:Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Sum<Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Shape*
+T0*
+Tshape0*'
+_output_shapes
+:���������
+�
+<Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Sum_1Sum?Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Select_1NAdam/gradients/Crossentropy/clip_by_value/Minimum_grad/BroadcastGradientArgs:1*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+:
+�
+@Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Reshape_1Reshape<Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Sum_1>Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Shape_1*
+T0*
+Tshape0*
+_output_shapes
+: 
+�
+.Adam/gradients/Crossentropy/truediv_grad/ShapeShapeFullyConnected_2/Softmax^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
+0Adam/gradients/Crossentropy/truediv_grad/Shape_1ShapeCrossentropy/Sum^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
+>Adam/gradients/Crossentropy/truediv_grad/BroadcastGradientArgsBroadcastGradientArgs.Adam/gradients/Crossentropy/truediv_grad/Shape0Adam/gradients/Crossentropy/truediv_grad/Shape_1*
+T0*2
+_output_shapes 
+:
+���������:
+���������
+�
+0Adam/gradients/Crossentropy/truediv_grad/RealDivRealDiv>Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/ReshapeCrossentropy/Sum*
+T0*'
+_output_shapes
+:���������
+�
+,Adam/gradients/Crossentropy/truediv_grad/SumSum0Adam/gradients/Crossentropy/truediv_grad/RealDiv>Adam/gradients/Crossentropy/truediv_grad/BroadcastGradientArgs*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+:
+�
+0Adam/gradients/Crossentropy/truediv_grad/ReshapeReshape,Adam/gradients/Crossentropy/truediv_grad/Sum.Adam/gradients/Crossentropy/truediv_grad/Shape*
+T0*
+Tshape0*'
+_output_shapes
+:���������
+�
+,Adam/gradients/Crossentropy/truediv_grad/NegNegFullyConnected_2/Softmax^Adam/moving_avg^moving_avg*
+T0*'
+_output_shapes
+:���������
+�
+2Adam/gradients/Crossentropy/truediv_grad/RealDiv_1RealDiv,Adam/gradients/Crossentropy/truediv_grad/NegCrossentropy/Sum*
+T0*'
+_output_shapes
+:���������
+�
+2Adam/gradients/Crossentropy/truediv_grad/RealDiv_2RealDiv2Adam/gradients/Crossentropy/truediv_grad/RealDiv_1Crossentropy/Sum*
+T0*'
+_output_shapes
+:���������
+�
+,Adam/gradients/Crossentropy/truediv_grad/mulMul>Adam/gradients/Crossentropy/clip_by_value/Minimum_grad/Reshape2Adam/gradients/Crossentropy/truediv_grad/RealDiv_2*
+T0*'
+_output_shapes
+:���������
+�
+.Adam/gradients/Crossentropy/truediv_grad/Sum_1Sum,Adam/gradients/Crossentropy/truediv_grad/mul@Adam/gradients/Crossentropy/truediv_grad/BroadcastGradientArgs:1*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+:
+�
+2Adam/gradients/Crossentropy/truediv_grad/Reshape_1Reshape.Adam/gradients/Crossentropy/truediv_grad/Sum_10Adam/gradients/Crossentropy/truediv_grad/Shape_1*
+T0*
+Tshape0*'
+_output_shapes
+:���������
+�
+*Adam/gradients/Crossentropy/Sum_grad/ShapeShapeFullyConnected_2/Softmax^Adam/moving_avg^moving_avg*
+T0*
+out_type0*
+_output_shapes
+:
+�
+)Adam/gradients/Crossentropy/Sum_grad/SizeConst^Adam/moving_avg^moving_avg*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+(Adam/gradients/Crossentropy/Sum_grad/addAdd"Crossentropy/Sum/reduction_indices)Adam/gradients/Crossentropy/Sum_grad/Size*
+T0*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+_output_shapes
+: 
+�
+(Adam/gradients/Crossentropy/Sum_grad/modFloorMod(Adam/gradients/Crossentropy/Sum_grad/add)Adam/gradients/Crossentropy/Sum_grad/Size*
+T0*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+_output_shapes
+: 
+�
+,Adam/gradients/Crossentropy/Sum_grad/Shape_1Const^Adam/moving_avg^moving_avg*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+valueB *
+dtype0*
+_output_shapes
+: 
+�
+0Adam/gradients/Crossentropy/Sum_grad/range/startConst^Adam/moving_avg^moving_avg*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+value	B : *
+dtype0*
+_output_shapes
+: 
+�
+0Adam/gradients/Crossentropy/Sum_grad/range/deltaConst^Adam/moving_avg^moving_avg*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+*Adam/gradients/Crossentropy/Sum_grad/rangeRange0Adam/gradients/Crossentropy/Sum_grad/range/start)Adam/gradients/Crossentropy/Sum_grad/Size0Adam/gradients/Crossentropy/Sum_grad/range/delta*
+
+Tidx0*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+_output_shapes
+:
+�
+/Adam/gradients/Crossentropy/Sum_grad/Fill/valueConst^Adam/moving_avg^moving_avg*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+)Adam/gradients/Crossentropy/Sum_grad/FillFill,Adam/gradients/Crossentropy/Sum_grad/Shape_1/Adam/gradients/Crossentropy/Sum_grad/Fill/value*
+T0*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+_output_shapes
+: 
+�
+2Adam/gradients/Crossentropy/Sum_grad/DynamicStitch
+DynamicStitch*Adam/gradients/Crossentropy/Sum_grad/range(Adam/gradients/Crossentropy/Sum_grad/mod*Adam/gradients/Crossentropy/Sum_grad/Shape)Adam/gradients/Crossentropy/Sum_grad/Fill*
+T0*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+N*#
+_output_shapes
+:
+���������
+�
+.Adam/gradients/Crossentropy/Sum_grad/Maximum/yConst^Adam/moving_avg^moving_avg*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+value	B :*
+dtype0*
+_output_shapes
+: 
+�
+,Adam/gradients/Crossentropy/Sum_grad/MaximumMaximum2Adam/gradients/Crossentropy/Sum_grad/DynamicStitch.Adam/gradients/Crossentropy/Sum_grad/Maximum/y*
+T0*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*#
+_output_shapes
+:
+���������
+�
+-Adam/gradients/Crossentropy/Sum_grad/floordivFloorDiv*Adam/gradients/Crossentropy/Sum_grad/Shape,Adam/gradients/Crossentropy/Sum_grad/Maximum*
+T0*=
+_class3
+1/loc:@Adam/gradients/Crossentropy/Sum_grad/Shape*
+_output_shapes
+:
+�
+,Adam/gradients/Crossentropy/Sum_grad/ReshapeReshape2Adam/gradients/Crossentropy/truediv_grad/Reshape_12Adam/gradients/Crossentropy/Sum_grad/DynamicStitch*
+T0*
+Tshape0*
+_output_shapes
+:
+�
+)Adam/gradients/Crossentropy/Sum_grad/TileTile,Adam/gradients/Crossentropy/Sum_grad/Reshape-Adam/gradients/Crossentropy/Sum_grad/floordiv*
+
+Tmultiples0*
+T0*'
+_output_shapes
+:���������
+�
+Adam/gradients/AddNAddN0Adam/gradients/Crossentropy/truediv_grad/Reshape)Adam/gradients/Crossentropy/Sum_grad/Tile*
+T0*C
+_class9
+75loc:@Adam/gradients/Crossentropy/truediv_grad/Reshape*
+N*'
+_output_shapes
+:���������
+�
+0Adam/gradients/FullyConnected_2/Softmax_grad/mulMulAdam/gradients/AddNFullyConnected_2/Softmax*
+T0*'
+_output_shapes
+:���������
+�
+BAdam/gradients/FullyConnected_2/Softmax_grad/Sum/reduction_indicesConst^Adam/moving_avg^moving_avg*
+value
+B:*
+dtype0*
+_output_shapes
+:
+�
+0Adam/gradients/FullyConnected_2/Softmax_grad/SumSum0Adam/gradients/FullyConnected_2/Softmax_grad/mulBAdam/gradients/FullyConnected_2/Softmax_grad/Sum/reduction_indices*
+	keep_dims( *
+
+Tidx0*
+T0*#
+_output_shapes
+:
+���������
+�
+:Adam/gradients/FullyConnected_2/Softmax_grad/Reshape/shapeConst^Adam/moving_avg^moving_avg*
+valueB"����   *
+dtype0*
+_output_shapes
+:
+�
+4Adam/gradients/FullyConnected_2/Softmax_grad/ReshapeReshape0Adam/gradients/FullyConnected_2/Softmax_grad/Sum:Adam/gradients/FullyConnected_2/Softmax_grad/Reshape/shape*
+T0*
+Tshape0*'
+_output_shapes
+:���������
+�
+0Adam/gradients/FullyConnected_2/Softmax_grad/subSubAdam/gradients/AddN4Adam/gradients/FullyConnected_2/Softmax_grad/Reshape*
+T0*'
+_output_shapes
+:���������
+�
+2Adam/gradients/FullyConnected_2/Softmax_grad/mul_1Mul0Adam/gradients/FullyConnected_2/Softmax_grad/subFullyConnected_2/Softmax*
+T0*'
+_output_shapes
+:���������
+�
+8Adam/gradients/FullyConnected_2/BiasAdd_grad/BiasAddGradBiasAddGrad2Adam/gradients/FullyConnected_2/Softmax_grad/mul_1*
+T0*
+data_formatNHWC*
+_output_shapes
+:
+�
+2Adam/gradients/FullyConnected_2/MatMul_grad/MatMulMatMul2Adam/gradients/FullyConnected_2/Softmax_grad/mul_1FullyConnected_2/W/read*
+transpose_b(*
+T0*
+transpose_a( *'
+_output_shapes
+:���������
+
+�
+4Adam/gradients/FullyConnected_2/MatMul_grad/MatMul_1MatMulFullyConnected_1/BiasAdd2Adam/gradients/FullyConnected_2/Softmax_grad/mul_1*
+transpose_b( *
+T0*
+transpose_a(*
+_output_shapes
+
+:
+
+�
+8Adam/gradients/FullyConnected_1/BiasAdd_grad/BiasAddGradBiasAddGrad2Adam/gradients/FullyConnected_2/MatMul_grad/MatMul*
+T0*
+data_formatNHWC*
+_output_shapes
+:
+
+�
+2Adam/gradients/FullyConnected_1/MatMul_grad/MatMulMatMul2Adam/gradients/FullyConnected_2/MatMul_grad/MatMulFullyConnected_1/W/read*
+transpose_b(*
+T0*
+transpose_a( *'
+_output_shapes
+:���������
+
+�
+4Adam/gradients/FullyConnected_1/MatMul_grad/MatMul_1MatMulFullyConnected/BiasAdd2Adam/gradients/FullyConnected_2/MatMul_grad/MatMul*
+transpose_b( *
+T0*
+transpose_a(*
+_output_shapes
+
+:
+
+
+�
+6Adam/gradients/FullyConnected/BiasAdd_grad/BiasAddGradBiasAddGrad2Adam/gradients/FullyConnected_1/MatMul_grad/MatMul*
+T0*
+data_formatNHWC*
+_output_shapes
+:
+
+�
+0Adam/gradients/FullyConnected/MatMul_grad/MatMulMatMul2Adam/gradients/FullyConnected_1/MatMul_grad/MatMulFullyConnected/W/read*
+transpose_b(*
+T0*
+transpose_a( *(
+_output_shapes
+:����������
+�
+2Adam/gradients/FullyConnected/MatMul_grad/MatMul_1MatMulInputData/X2Adam/gradients/FullyConnected_1/MatMul_grad/MatMul*
+transpose_b( *
+T0*
+transpose_a(*
+_output_shapes
+:	�
+
+�
+Adam/global_norm/L2LossL2Loss2Adam/gradients/FullyConnected/MatMul_grad/MatMul_1*
+T0*E
+_class;
+97loc:@Adam/gradients/FullyConnected/MatMul_grad/MatMul_1*
+_output_shapes
+: 
+�
+Adam/global_norm/L2Loss_1L2Loss6Adam/gradients/FullyConnected/BiasAdd_grad/BiasAddGrad*
+T0*I
+_class?
+=;loc:@Adam/gradients/FullyConnected/BiasAdd_grad/BiasAddGrad*
+_output_shapes
+: 
+�
+Adam/global_norm/L2Loss_2L2Loss4Adam/gradients/FullyConnected_1/MatMul_grad/MatMul_1*
+T0*G
+_class=
+;9loc:@Adam/gradients/FullyConnected_1/MatMul_grad/MatMul_1*
+_output_shapes
+: 
+�
+Adam/global_norm/L2Loss_3L2Loss8Adam/gradients/FullyConnected_1/BiasAdd_grad/BiasAddGrad*
+T0*K
+_classA
+?=loc:@Adam/gradients/FullyConnected_1/BiasAdd_grad/BiasAddGrad*
+_output_shapes
+: 
+�
+Adam/global_norm/L2Loss_4L2Loss4Adam/gradients/FullyConnected_2/MatMul_grad/MatMul_1*
+T0*G
+_class=
+;9loc:@Adam/gradients/FullyConnected_2/MatMul_grad/MatMul_1*
+_output_shapes
+: 
+�
+Adam/global_norm/L2Loss_5L2Loss8Adam/gradients/FullyConnected_2/BiasAdd_grad/BiasAddGrad*
+T0*K
+_classA
+?=loc:@Adam/gradients/FullyConnected_2/BiasAdd_grad/BiasAddGrad*
+_output_shapes
+: 
+�
+Adam/global_norm/stackPackAdam/global_norm/L2LossAdam/global_norm/L2Loss_1Adam/global_norm/L2Loss_2Adam/global_norm/L2Loss_3Adam/global_norm/L2Loss_4Adam/global_norm/L2Loss_5*
+T0*
+
+axis *
+N*
+_output_shapes
+:
+
+Adam/global_norm/ConstConst^Adam/moving_avg^moving_avg*
+value
+B: *
+dtype0*
+_output_shapes
+:
+�
+Adam/global_norm/SumSumAdam/global_norm/stackAdam/global_norm/Const*
+	keep_dims( *
+
+Tidx0*
+T0*
+_output_shapes
+: 
+|
+Adam/global_norm/Const_1Const^Adam/moving_avg^moving_avg*
+valueB
+ *   @*
+dtype0*
+_output_shapes
+: 
+l
+Adam/global_norm/mulMulAdam/global_norm/SumAdam/global_norm/Const_1*
+T0*
+_output_shapes
+: 
+[
+Adam/global_norm/global_normSqrtAdam/global_norm/mul*
+T0*
+_output_shapes
+: 
+�
+"Adam/clip_by_global_norm/truediv/xConst^Adam/moving_avg^moving_avg*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+�
+ Adam/clip_by_global_norm/truedivRealDiv"Adam/clip_by_global_norm/truediv/xAdam/global_norm/global_norm*
+T0*
+_output_shapes
+: 
+�
+Adam/clip_by_global_norm/ConstConst^Adam/moving_avg^moving_avg*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+�
+$Adam/clip_by_global_norm/truediv_1/yConst^Adam/moving_avg^moving_avg*
+valueB
+ *  �@*
+dtype0*
+_output_shapes
+: 
+�
+"Adam/clip_by_global_norm/truediv_1RealDivAdam/clip_by_global_norm/Const$Adam/clip_by_global_norm/truediv_1/y*
+T0*
+_output_shapes
+: 
+�
+ Adam/clip_by_global_norm/MinimumMinimum Adam/clip_by_global_norm/truediv"Adam/clip_by_global_norm/truediv_1*
+T0*
+_output_shapes
+: 
+�
+Adam/clip_by_global_norm/mul/xConst^Adam/moving_avg^moving_avg*
+valueB
+ *  �@*
+dtype0*
+_output_shapes
+: 
+�
+Adam/clip_by_global_norm/mulMulAdam/clip_by_global_norm/mul/x Adam/clip_by_global_norm/Minimum*
+T0*
+_output_shapes
+: 
+�
+Adam/clip_by_global_norm/mul_1Mul2Adam/gradients/FullyConnected/MatMul_grad/MatMul_1Adam/clip_by_global_norm/mul*
+T0*E
+_class;
+97loc:@Adam/gradients/FullyConnected/MatMul_grad/MatMul_1*
+_output_shapes
+:	�
+
+�
+4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_0IdentityAdam/clip_by_global_norm/mul_1*
+T0*E
+_class;
+97loc:@Adam/gradients/FullyConnected/MatMul_grad/MatMul_1*
+_output_shapes
+:	�
+
+�
+Adam/clip_by_global_norm/mul_2Mul6Adam/gradients/FullyConnected/BiasAdd_grad/BiasAddGradAdam/clip_by_global_norm/mul*
+T0*I
+_class?
+=;loc:@Adam/gradients/FullyConnected/BiasAdd_grad/BiasAddGrad*
+_output_shapes
+:
+
+�
+4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_1IdentityAdam/clip_by_global_norm/mul_2*
+T0*I
+_class?
+=;loc:@Adam/gradients/FullyConnected/BiasAdd_grad/BiasAddGrad*
+_output_shapes
+:
+
+�
+Adam/clip_by_global_norm/mul_3Mul4Adam/gradients/FullyConnected_1/MatMul_grad/MatMul_1Adam/clip_by_global_norm/mul*
+T0*G
+_class=
+;9loc:@Adam/gradients/FullyConnected_1/MatMul_grad/MatMul_1*
+_output_shapes
+
+:
+
+
+�
+4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_2IdentityAdam/clip_by_global_norm/mul_3*
+T0*G
+_class=
+;9loc:@Adam/gradients/FullyConnected_1/MatMul_grad/MatMul_1*
+_output_shapes
+
+:
+
+
+�
+Adam/clip_by_global_norm/mul_4Mul8Adam/gradients/FullyConnected_1/BiasAdd_grad/BiasAddGradAdam/clip_by_global_norm/mul*
+T0*K
+_classA
+?=loc:@Adam/gradients/FullyConnected_1/BiasAdd_grad/BiasAddGrad*
+_output_shapes
+:
+
+�
+4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_3IdentityAdam/clip_by_global_norm/mul_4*
+T0*K
+_classA
+?=loc:@Adam/gradients/FullyConnected_1/BiasAdd_grad/BiasAddGrad*
+_output_shapes
+:
+
+�
+Adam/clip_by_global_norm/mul_5Mul4Adam/gradients/FullyConnected_2/MatMul_grad/MatMul_1Adam/clip_by_global_norm/mul*
+T0*G
+_class=
+;9loc:@Adam/gradients/FullyConnected_2/MatMul_grad/MatMul_1*
+_output_shapes
+
+:
+
+�
+4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_4IdentityAdam/clip_by_global_norm/mul_5*
+T0*G
+_class=
+;9loc:@Adam/gradients/FullyConnected_2/MatMul_grad/MatMul_1*
+_output_shapes
+
+:
+
+�
+Adam/clip_by_global_norm/mul_6Mul8Adam/gradients/FullyConnected_2/BiasAdd_grad/BiasAddGradAdam/clip_by_global_norm/mul*
+T0*K
+_classA
+?=loc:@Adam/gradients/FullyConnected_2/BiasAdd_grad/BiasAddGrad*
+_output_shapes
+:
+�
+4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_5IdentityAdam/clip_by_global_norm/mul_6*
+T0*K
+_classA
+?=loc:@Adam/gradients/FullyConnected_2/BiasAdd_grad/BiasAddGrad*
+_output_shapes
+:
+�
+Adam/beta1_power/initial_valueConst*#
+_class
+loc:@FullyConnected/W*
+valueB
+ *fff?*
+dtype0*
+_output_shapes
+: 
+�
+Adam/beta1_power
+VariableV2*
+shared_name *#
+_class
+loc:@FullyConnected/W*
+	container *
+shape: *
+dtype0*
+_output_shapes
+: 
+�
+Adam/beta1_power/AssignAssignAdam/beta1_powerAdam/beta1_power/initial_value*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+y
+Adam/beta1_power/readIdentityAdam/beta1_power*
+T0*#
+_class
+loc:@FullyConnected/W*
+_output_shapes
+: 
+�
+Adam/beta2_power/initial_valueConst*#
+_class
+loc:@FullyConnected/W*
+valueB
+ *w�?*
+dtype0*
+_output_shapes
+: 
+�
+Adam/beta2_power
+VariableV2*
+shared_name *#
+_class
+loc:@FullyConnected/W*
+	container *
+shape: *
+dtype0*
+_output_shapes
+: 
+�
+Adam/beta2_power/AssignAssignAdam/beta2_powerAdam/beta2_power/initial_value*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+y
+Adam/beta2_power/readIdentityAdam/beta2_power*
+T0*#
+_class
+loc:@FullyConnected/W*
+_output_shapes
+: 
+�
+'FullyConnected/W/Adam/Initializer/zerosConst*
+valueB	�
+*    *#
+_class
+loc:@FullyConnected/W*
+dtype0*
+_output_shapes
+:	�
+
+�
+FullyConnected/W/Adam
+VariableV2*
+shared_name *#
+_class
+loc:@FullyConnected/W*
+	container *
+shape:	�
+*
+dtype0*
+_output_shapes
+:	�
+
+�
+FullyConnected/W/Adam/AssignAssignFullyConnected/W/Adam'FullyConnected/W/Adam/Initializer/zeros*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+�
+FullyConnected/W/Adam/readIdentityFullyConnected/W/Adam*
+T0*#
+_class
+loc:@FullyConnected/W*
+_output_shapes
+:	�
+
+�
+)FullyConnected/W/Adam_1/Initializer/zerosConst*
+valueB	�
+*    *#
+_class
+loc:@FullyConnected/W*
+dtype0*
+_output_shapes
+:	�
+
+�
+FullyConnected/W/Adam_1
+VariableV2*
+shared_name *#
+_class
+loc:@FullyConnected/W*
+	container *
+shape:	�
+*
+dtype0*
+_output_shapes
+:	�
+
+�
+FullyConnected/W/Adam_1/AssignAssignFullyConnected/W/Adam_1)FullyConnected/W/Adam_1/Initializer/zeros*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+�
+FullyConnected/W/Adam_1/readIdentityFullyConnected/W/Adam_1*
+T0*#
+_class
+loc:@FullyConnected/W*
+_output_shapes
+:	�
+
+�
+'FullyConnected/b/Adam/Initializer/zerosConst*
+valueB
+*    *#
+_class
+loc:@FullyConnected/b*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected/b/Adam
+VariableV2*
+shared_name *#
+_class
+loc:@FullyConnected/b*
+	container *
+shape:
+*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected/b/Adam/AssignAssignFullyConnected/b/Adam'FullyConnected/b/Adam/Initializer/zeros*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+FullyConnected/b/Adam/readIdentityFullyConnected/b/Adam*
+T0*#
+_class
+loc:@FullyConnected/b*
+_output_shapes
+:
+
+�
+)FullyConnected/b/Adam_1/Initializer/zerosConst*
+valueB
+*    *#
+_class
+loc:@FullyConnected/b*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected/b/Adam_1
+VariableV2*
+shared_name *#
+_class
+loc:@FullyConnected/b*
+	container *
+shape:
+*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected/b/Adam_1/AssignAssignFullyConnected/b/Adam_1)FullyConnected/b/Adam_1/Initializer/zeros*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+FullyConnected/b/Adam_1/readIdentityFullyConnected/b/Adam_1*
+T0*#
+_class
+loc:@FullyConnected/b*
+_output_shapes
+:
+
+�
+)FullyConnected_1/W/Adam/Initializer/zerosConst*
+valueB
+
+*    *%
+_class
+loc:@FullyConnected_1/W*
+dtype0*
+_output_shapes
+
+:
+
+
+�
+FullyConnected_1/W/Adam
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_1/W*
+	container *
+shape
+:
+
+*
+dtype0*
+_output_shapes
+
+:
+
+
+�
+FullyConnected_1/W/Adam/AssignAssignFullyConnected_1/W/Adam)FullyConnected_1/W/Adam/Initializer/zeros*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+�
+FullyConnected_1/W/Adam/readIdentityFullyConnected_1/W/Adam*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+_output_shapes
+
+:
+
+
+�
++FullyConnected_1/W/Adam_1/Initializer/zerosConst*
+valueB
+
+*    *%
+_class
+loc:@FullyConnected_1/W*
+dtype0*
+_output_shapes
+
+:
+
+
+�
+FullyConnected_1/W/Adam_1
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_1/W*
+	container *
+shape
+:
+
+*
+dtype0*
+_output_shapes
+
+:
+
+
+�
+ FullyConnected_1/W/Adam_1/AssignAssignFullyConnected_1/W/Adam_1+FullyConnected_1/W/Adam_1/Initializer/zeros*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+�
+FullyConnected_1/W/Adam_1/readIdentityFullyConnected_1/W/Adam_1*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+_output_shapes
+
+:
+
+
+�
+)FullyConnected_1/b/Adam/Initializer/zerosConst*
+valueB
+*    *%
+_class
+loc:@FullyConnected_1/b*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected_1/b/Adam
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_1/b*
+	container *
+shape:
+*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected_1/b/Adam/AssignAssignFullyConnected_1/b/Adam)FullyConnected_1/b/Adam/Initializer/zeros*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+FullyConnected_1/b/Adam/readIdentityFullyConnected_1/b/Adam*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+_output_shapes
+:
+
+�
++FullyConnected_1/b/Adam_1/Initializer/zerosConst*
+valueB
+*    *%
+_class
+loc:@FullyConnected_1/b*
+dtype0*
+_output_shapes
+:
+
+�
+FullyConnected_1/b/Adam_1
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_1/b*
+	container *
+shape:
+*
+dtype0*
+_output_shapes
+:
+
+�
+ FullyConnected_1/b/Adam_1/AssignAssignFullyConnected_1/b/Adam_1+FullyConnected_1/b/Adam_1/Initializer/zeros*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+FullyConnected_1/b/Adam_1/readIdentityFullyConnected_1/b/Adam_1*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+_output_shapes
+:
+
+�
+)FullyConnected_2/W/Adam/Initializer/zerosConst*
+valueB
+*    *%
+_class
+loc:@FullyConnected_2/W*
+dtype0*
+_output_shapes
+
+:
+
+�
+FullyConnected_2/W/Adam
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_2/W*
+	container *
+shape
+:
+*
+dtype0*
+_output_shapes
+
+:
+
+�
+FullyConnected_2/W/Adam/AssignAssignFullyConnected_2/W/Adam)FullyConnected_2/W/Adam/Initializer/zeros*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+�
+FullyConnected_2/W/Adam/readIdentityFullyConnected_2/W/Adam*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+_output_shapes
+
+:
+
+�
++FullyConnected_2/W/Adam_1/Initializer/zerosConst*
+valueB
+*    *%
+_class
+loc:@FullyConnected_2/W*
+dtype0*
+_output_shapes
+
+:
+
+�
+FullyConnected_2/W/Adam_1
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_2/W*
+	container *
+shape
+:
+*
+dtype0*
+_output_shapes
+
+:
+
+�
+ FullyConnected_2/W/Adam_1/AssignAssignFullyConnected_2/W/Adam_1+FullyConnected_2/W/Adam_1/Initializer/zeros*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+�
+FullyConnected_2/W/Adam_1/readIdentityFullyConnected_2/W/Adam_1*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+_output_shapes
+
+:
+
+�
+)FullyConnected_2/b/Adam/Initializer/zerosConst*
+valueB*    *%
+_class
+loc:@FullyConnected_2/b*
+dtype0*
+_output_shapes
+:
+�
+FullyConnected_2/b/Adam
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_2/b*
+	container *
+shape:*
+dtype0*
+_output_shapes
+:
+�
+FullyConnected_2/b/Adam/AssignAssignFullyConnected_2/b/Adam)FullyConnected_2/b/Adam/Initializer/zeros*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+�
+FullyConnected_2/b/Adam/readIdentityFullyConnected_2/b/Adam*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+_output_shapes
+:
+�
++FullyConnected_2/b/Adam_1/Initializer/zerosConst*
+valueB*    *%
+_class
+loc:@FullyConnected_2/b*
+dtype0*
+_output_shapes
+:
+�
+FullyConnected_2/b/Adam_1
+VariableV2*
+shared_name *%
+_class
+loc:@FullyConnected_2/b*
+	container *
+shape:*
+dtype0*
+_output_shapes
+:
+�
+ FullyConnected_2/b/Adam_1/AssignAssignFullyConnected_2/b/Adam_1+FullyConnected_2/b/Adam_1/Initializer/zeros*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+�
+FullyConnected_2/b/Adam_1/readIdentityFullyConnected_2/b/Adam_1*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+_output_shapes
+:
+g
+"Adam/apply_grad_op_0/learning_rateConst*
+valueB
+ *o�:*
+dtype0*
+_output_shapes
+: 
+_
+Adam/apply_grad_op_0/beta1Const*
+valueB
+ *fff?*
+dtype0*
+_output_shapes
+: 
+_
+Adam/apply_grad_op_0/beta2Const*
+valueB
+ *w�?*
+dtype0*
+_output_shapes
+: 
+a
+Adam/apply_grad_op_0/epsilonConst*
+valueB
+ *w�+2*
+dtype0*
+_output_shapes
+: 
+�
+6Adam/apply_grad_op_0/update_FullyConnected/W/ApplyAdam	ApplyAdamFullyConnected/WFullyConnected/W/AdamFullyConnected/W/Adam_1Adam/beta1_power/readAdam/beta2_power/read"Adam/apply_grad_op_0/learning_rateAdam/apply_grad_op_0/beta1Adam/apply_grad_op_0/beta2Adam/apply_grad_op_0/epsilon4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_0*
+use_locking( *
+T0*#
+_class
+loc:@FullyConnected/W*
+use_nesterov( *
+_output_shapes
+:	�
+
+�
+6Adam/apply_grad_op_0/update_FullyConnected/b/ApplyAdam	ApplyAdamFullyConnected/bFullyConnected/b/AdamFullyConnected/b/Adam_1Adam/beta1_power/readAdam/beta2_power/read"Adam/apply_grad_op_0/learning_rateAdam/apply_grad_op_0/beta1Adam/apply_grad_op_0/beta2Adam/apply_grad_op_0/epsilon4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_1*
+use_locking( *
+T0*#
+_class
+loc:@FullyConnected/b*
+use_nesterov( *
+_output_shapes
+:
+
+�
+8Adam/apply_grad_op_0/update_FullyConnected_1/W/ApplyAdam	ApplyAdamFullyConnected_1/WFullyConnected_1/W/AdamFullyConnected_1/W/Adam_1Adam/beta1_power/readAdam/beta2_power/read"Adam/apply_grad_op_0/learning_rateAdam/apply_grad_op_0/beta1Adam/apply_grad_op_0/beta2Adam/apply_grad_op_0/epsilon4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_2*
+use_locking( *
+T0*%
+_class
+loc:@FullyConnected_1/W*
+use_nesterov( *
+_output_shapes
+
+:
+
+
+�
+8Adam/apply_grad_op_0/update_FullyConnected_1/b/ApplyAdam	ApplyAdamFullyConnected_1/bFullyConnected_1/b/AdamFullyConnected_1/b/Adam_1Adam/beta1_power/readAdam/beta2_power/read"Adam/apply_grad_op_0/learning_rateAdam/apply_grad_op_0/beta1Adam/apply_grad_op_0/beta2Adam/apply_grad_op_0/epsilon4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_3*
+use_locking( *
+T0*%
+_class
+loc:@FullyConnected_1/b*
+use_nesterov( *
+_output_shapes
+:
+
+�
+8Adam/apply_grad_op_0/update_FullyConnected_2/W/ApplyAdam	ApplyAdamFullyConnected_2/WFullyConnected_2/W/AdamFullyConnected_2/W/Adam_1Adam/beta1_power/readAdam/beta2_power/read"Adam/apply_grad_op_0/learning_rateAdam/apply_grad_op_0/beta1Adam/apply_grad_op_0/beta2Adam/apply_grad_op_0/epsilon4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_4*
+use_locking( *
+T0*%
+_class
+loc:@FullyConnected_2/W*
+use_nesterov( *
+_output_shapes
+
+:
+
+�
+8Adam/apply_grad_op_0/update_FullyConnected_2/b/ApplyAdam	ApplyAdamFullyConnected_2/bFullyConnected_2/b/AdamFullyConnected_2/b/Adam_1Adam/beta1_power/readAdam/beta2_power/read"Adam/apply_grad_op_0/learning_rateAdam/apply_grad_op_0/beta1Adam/apply_grad_op_0/beta2Adam/apply_grad_op_0/epsilon4Adam/clip_by_global_norm/Adam/clip_by_global_norm/_5*
+use_locking( *
+T0*%
+_class
+loc:@FullyConnected_2/b*
+use_nesterov( *
+_output_shapes
+:
+�
+Adam/apply_grad_op_0/mulMulAdam/beta1_power/readAdam/apply_grad_op_0/beta17^Adam/apply_grad_op_0/update_FullyConnected/W/ApplyAdam7^Adam/apply_grad_op_0/update_FullyConnected/b/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_1/W/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_1/b/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_2/W/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_2/b/ApplyAdam*
+T0*#
+_class
+loc:@FullyConnected/W*
+_output_shapes
+: 
+�
+Adam/apply_grad_op_0/AssignAssignAdam/beta1_powerAdam/apply_grad_op_0/mul*
+use_locking( *
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+�
+Adam/apply_grad_op_0/mul_1MulAdam/beta2_power/readAdam/apply_grad_op_0/beta27^Adam/apply_grad_op_0/update_FullyConnected/W/ApplyAdam7^Adam/apply_grad_op_0/update_FullyConnected/b/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_1/W/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_1/b/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_2/W/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_2/b/ApplyAdam*
+T0*#
+_class
+loc:@FullyConnected/W*
+_output_shapes
+: 
+�
+Adam/apply_grad_op_0/Assign_1AssignAdam/beta2_powerAdam/apply_grad_op_0/mul_1*
+use_locking( *
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+�
+Adam/apply_grad_op_0/updateNoOp7^Adam/apply_grad_op_0/update_FullyConnected/W/ApplyAdam7^Adam/apply_grad_op_0/update_FullyConnected/b/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_1/W/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_1/b/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_2/W/ApplyAdam9^Adam/apply_grad_op_0/update_FullyConnected_2/b/ApplyAdam^Adam/apply_grad_op_0/Assign^Adam/apply_grad_op_0/Assign_1
+�
+Adam/apply_grad_op_0/valueConst^Adam/apply_grad_op_0/update* 
+_class
+loc:@Training_step*
+valueB
+ *  �?*
+dtype0*
+_output_shapes
+: 
+�
+Adam/apply_grad_op_0	AssignAdd
+Training_stepAdam/apply_grad_op_0/value*
+use_locking( *
+T0* 
+_class
+loc:@Training_step*
+_output_shapes
+: 
+]
+Adam/Merge/MergeSummaryMergeSummaryLoss
+Adam/Loss/raw*
+N*
+_output_shapes
+: 
+.
+Adam/train_op_0NoOp^Adam/apply_grad_op_0
+P
+
+save/ConstConst*
+value
+B Bmodel*
+dtype0*
+_output_shapes
+: 
+�
+save/SaveV2/tensor_namesConst*�
+value�B�BAccuracy/Mean/moving_avgBAdam/beta1_powerBAdam/beta2_powerBCrossentropy/Mean/moving_avgBFullyConnected/WBFullyConnected/W/AdamBFullyConnected/W/Adam_1BFullyConnected/bBFullyConnected/b/AdamBFullyConnected/b/Adam_1BFullyConnected_1/WBFullyConnected_1/W/AdamBFullyConnected_1/W/Adam_1BFullyConnected_1/bBFullyConnected_1/b/AdamBFullyConnected_1/b/Adam_1BFullyConnected_2/WBFullyConnected_2/W/AdamBFullyConnected_2/W/Adam_1BFullyConnected_2/bBFullyConnected_2/b/AdamBFullyConnected_2/b/Adam_1BGlobal_StepB
+Training_stepBis_trainingBval_accBval_loss*
+dtype0*
+_output_shapes
+:
+�
+save/SaveV2/shape_and_slicesConst*I
+value@B>B B B B B B B B B B B B B B B B B B B B B B B B B B B *
+dtype0*
+_output_shapes
+:
+�
+save/SaveV2SaveV2
+save/Constsave/SaveV2/tensor_namessave/SaveV2/shape_and_slicesAccuracy/Mean/moving_avgAdam/beta1_powerAdam/beta2_powerCrossentropy/Mean/moving_avgFullyConnected/WFullyConnected/W/AdamFullyConnected/W/Adam_1FullyConnected/bFullyConnected/b/AdamFullyConnected/b/Adam_1FullyConnected_1/WFullyConnected_1/W/AdamFullyConnected_1/W/Adam_1FullyConnected_1/bFullyConnected_1/b/AdamFullyConnected_1/b/Adam_1FullyConnected_2/WFullyConnected_2/W/AdamFullyConnected_2/W/Adam_1FullyConnected_2/bFullyConnected_2/b/AdamFullyConnected_2/b/Adam_1Global_Step
+Training_stepis_trainingval_accval_loss*)
+dtypes
+2
+
+}
+save/control_dependencyIdentity
+save/Const^save/SaveV2*
+T0*
+_class
+loc:@save/Const*
+_output_shapes
+: 
+|
+save/RestoreV2/tensor_namesConst*-
+value$B"BAccuracy/Mean/moving_avg*
+dtype0*
+_output_shapes
+:
+h
+save/RestoreV2/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2	RestoreV2
+save/Constsave/RestoreV2/tensor_namessave/RestoreV2/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/AssignAssignAccuracy/Mean/moving_avgsave/RestoreV2*
+use_locking(*
+T0*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+validate_shape(*
+_output_shapes
+: 
+v
+save/RestoreV2_1/tensor_namesConst*%
+valueBBAdam/beta1_power*
+dtype0*
+_output_shapes
+:
+j
+!save/RestoreV2_1/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_1	RestoreV2
+save/Constsave/RestoreV2_1/tensor_names!save/RestoreV2_1/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save/Assign_1AssignAdam/beta1_powersave/RestoreV2_1*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+v
+save/RestoreV2_2/tensor_namesConst*%
+valueBBAdam/beta2_power*
+dtype0*
+_output_shapes
+:
+j
+!save/RestoreV2_2/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_2	RestoreV2
+save/Constsave/RestoreV2_2/tensor_names!save/RestoreV2_2/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save/Assign_2AssignAdam/beta2_powersave/RestoreV2_2*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+�
+save/RestoreV2_3/tensor_namesConst*1
+value(B&BCrossentropy/Mean/moving_avg*
+dtype0*
+_output_shapes
+:
+j
+!save/RestoreV2_3/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_3	RestoreV2
+save/Constsave/RestoreV2_3/tensor_names!save/RestoreV2_3/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save/Assign_3AssignCrossentropy/Mean/moving_avgsave/RestoreV2_3*
+use_locking(*
+T0*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+validate_shape(*
+_output_shapes
+: 
+v
+save/RestoreV2_4/tensor_namesConst*%
+valueBBFullyConnected/W*
+dtype0*
+_output_shapes
+:
+j
+!save/RestoreV2_4/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_4	RestoreV2
+save/Constsave/RestoreV2_4/tensor_names!save/RestoreV2_4/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save/Assign_4AssignFullyConnected/Wsave/RestoreV2_4*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+{
+save/RestoreV2_5/tensor_namesConst**
+value!BBFullyConnected/W/Adam*
+dtype0*
+_output_shapes
+:
+j
+!save/RestoreV2_5/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_5	RestoreV2
+save/Constsave/RestoreV2_5/tensor_names!save/RestoreV2_5/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save/Assign_5AssignFullyConnected/W/Adamsave/RestoreV2_5*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+}
+save/RestoreV2_6/tensor_namesConst*,
+value#B!BFullyConnected/W/Adam_1*
+dtype0*
+_output_shapes
+:
+j
+!save/RestoreV2_6/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_6	RestoreV2
+save/Constsave/RestoreV2_6/tensor_names!save/RestoreV2_6/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save/Assign_6AssignFullyConnected/W/Adam_1save/RestoreV2_6*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+v
+save/RestoreV2_7/tensor_namesConst*%
+valueBBFullyConnected/b*
+dtype0*
+_output_shapes
+:
+j
+!save/RestoreV2_7/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_7	RestoreV2
+save/Constsave/RestoreV2_7/tensor_names!save/RestoreV2_7/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save/Assign_7AssignFullyConnected/bsave/RestoreV2_7*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+{
+save/RestoreV2_8/tensor_namesConst**
+value!BBFullyConnected/b/Adam*
+dtype0*
+_output_shapes
+:
+j
+!save/RestoreV2_8/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_8	RestoreV2
+save/Constsave/RestoreV2_8/tensor_names!save/RestoreV2_8/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save/Assign_8AssignFullyConnected/b/Adamsave/RestoreV2_8*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+}
+save/RestoreV2_9/tensor_namesConst*,
+value#B!BFullyConnected/b/Adam_1*
+dtype0*
+_output_shapes
+:
+j
+!save/RestoreV2_9/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_9	RestoreV2
+save/Constsave/RestoreV2_9/tensor_names!save/RestoreV2_9/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save/Assign_9AssignFullyConnected/b/Adam_1save/RestoreV2_9*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+y
+save/RestoreV2_10/tensor_namesConst*'
+valueBBFullyConnected_1/W*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_10/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_10	RestoreV2
+save/Constsave/RestoreV2_10/tensor_names"save/RestoreV2_10/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_10AssignFullyConnected_1/Wsave/RestoreV2_10*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+~
+save/RestoreV2_11/tensor_namesConst*,
+value#B!BFullyConnected_1/W/Adam*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_11/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_11	RestoreV2
+save/Constsave/RestoreV2_11/tensor_names"save/RestoreV2_11/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_11AssignFullyConnected_1/W/Adamsave/RestoreV2_11*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+�
+save/RestoreV2_12/tensor_namesConst*.
+value%B#BFullyConnected_1/W/Adam_1*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_12/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_12	RestoreV2
+save/Constsave/RestoreV2_12/tensor_names"save/RestoreV2_12/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_12AssignFullyConnected_1/W/Adam_1save/RestoreV2_12*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+y
+save/RestoreV2_13/tensor_namesConst*'
+valueBBFullyConnected_1/b*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_13/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_13	RestoreV2
+save/Constsave/RestoreV2_13/tensor_names"save/RestoreV2_13/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_13AssignFullyConnected_1/bsave/RestoreV2_13*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+~
+save/RestoreV2_14/tensor_namesConst*,
+value#B!BFullyConnected_1/b/Adam*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_14/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_14	RestoreV2
+save/Constsave/RestoreV2_14/tensor_names"save/RestoreV2_14/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_14AssignFullyConnected_1/b/Adamsave/RestoreV2_14*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+save/RestoreV2_15/tensor_namesConst*.
+value%B#BFullyConnected_1/b/Adam_1*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_15/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_15	RestoreV2
+save/Constsave/RestoreV2_15/tensor_names"save/RestoreV2_15/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_15AssignFullyConnected_1/b/Adam_1save/RestoreV2_15*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+y
+save/RestoreV2_16/tensor_namesConst*'
+valueBBFullyConnected_2/W*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_16/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_16	RestoreV2
+save/Constsave/RestoreV2_16/tensor_names"save/RestoreV2_16/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_16AssignFullyConnected_2/Wsave/RestoreV2_16*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+~
+save/RestoreV2_17/tensor_namesConst*,
+value#B!BFullyConnected_2/W/Adam*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_17/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_17	RestoreV2
+save/Constsave/RestoreV2_17/tensor_names"save/RestoreV2_17/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_17AssignFullyConnected_2/W/Adamsave/RestoreV2_17*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+�
+save/RestoreV2_18/tensor_namesConst*.
+value%B#BFullyConnected_2/W/Adam_1*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_18/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_18	RestoreV2
+save/Constsave/RestoreV2_18/tensor_names"save/RestoreV2_18/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_18AssignFullyConnected_2/W/Adam_1save/RestoreV2_18*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+y
+save/RestoreV2_19/tensor_namesConst*'
+valueBBFullyConnected_2/b*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_19/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_19	RestoreV2
+save/Constsave/RestoreV2_19/tensor_names"save/RestoreV2_19/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_19AssignFullyConnected_2/bsave/RestoreV2_19*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+~
+save/RestoreV2_20/tensor_namesConst*,
+value#B!BFullyConnected_2/b/Adam*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_20/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_20	RestoreV2
+save/Constsave/RestoreV2_20/tensor_names"save/RestoreV2_20/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_20AssignFullyConnected_2/b/Adamsave/RestoreV2_20*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+�
+save/RestoreV2_21/tensor_namesConst*.
+value%B#BFullyConnected_2/b/Adam_1*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_21/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_21	RestoreV2
+save/Constsave/RestoreV2_21/tensor_names"save/RestoreV2_21/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_21AssignFullyConnected_2/b/Adam_1save/RestoreV2_21*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+r
+save/RestoreV2_22/tensor_namesConst* 
+valueBBGlobal_Step*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_22/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_22	RestoreV2
+save/Constsave/RestoreV2_22/tensor_names"save/RestoreV2_22/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_22AssignGlobal_Stepsave/RestoreV2_22*
+use_locking(*
+T0*
+_class
+loc:@Global_Step*
+validate_shape(*
+_output_shapes
+: 
+t
+save/RestoreV2_23/tensor_namesConst*"
+valueBB
+Training_step*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_23/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_23	RestoreV2
+save/Constsave/RestoreV2_23/tensor_names"save/RestoreV2_23/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_23Assign
+Training_stepsave/RestoreV2_23*
+use_locking(*
+T0* 
+_class
+loc:@Training_step*
+validate_shape(*
+_output_shapes
+: 
+r
+save/RestoreV2_24/tensor_namesConst* 
+valueBBis_training*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_24/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_24	RestoreV2
+save/Constsave/RestoreV2_24/tensor_names"save/RestoreV2_24/shape_and_slices*
+dtypes
+2
+*
+_output_shapes
+:
+�
+save/Assign_24Assignis_trainingsave/RestoreV2_24*
+use_locking(*
+T0
+*
+_class
+loc:@is_training*
+validate_shape(*
+_output_shapes
+: 
+n
+save/RestoreV2_25/tensor_namesConst*
+valueBBval_acc*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_25/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_25	RestoreV2
+save/Constsave/RestoreV2_25/tensor_names"save/RestoreV2_25/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_25Assignval_accsave/RestoreV2_25*
+use_locking(*
+T0*
+_class
+loc:@val_acc*
+validate_shape(*
+_output_shapes
+: 
+o
+save/RestoreV2_26/tensor_namesConst*
+valueBBval_loss*
+dtype0*
+_output_shapes
+:
+k
+"save/RestoreV2_26/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save/RestoreV2_26	RestoreV2
+save/Constsave/RestoreV2_26/tensor_names"save/RestoreV2_26/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save/Assign_26Assignval_losssave/RestoreV2_26*
+use_locking(*
+T0*
+_class
+
+loc:@val_loss*
+validate_shape(*
+_output_shapes
+: 
+�
+save/restore_allNoOp^save/Assign^save/Assign_1^save/Assign_2^save/Assign_3^save/Assign_4^save/Assign_5^save/Assign_6^save/Assign_7^save/Assign_8^save/Assign_9^save/Assign_10^save/Assign_11^save/Assign_12^save/Assign_13^save/Assign_14^save/Assign_15^save/Assign_16^save/Assign_17^save/Assign_18^save/Assign_19^save/Assign_20^save/Assign_21^save/Assign_22^save/Assign_23^save/Assign_24^save/Assign_25^save/Assign_26
+R
+save_1/ConstConst*
+value
+B Bmodel*
+dtype0*
+_output_shapes
+: 
+�
+save_1/SaveV2/tensor_namesConst*�
+value�B�BAccuracy/Mean/moving_avgBAdam/beta1_powerBAdam/beta2_powerBCrossentropy/Mean/moving_avgBFullyConnected/WBFullyConnected/W/AdamBFullyConnected/W/Adam_1BFullyConnected/bBFullyConnected/b/AdamBFullyConnected/b/Adam_1BFullyConnected_1/WBFullyConnected_1/W/AdamBFullyConnected_1/W/Adam_1BFullyConnected_1/bBFullyConnected_1/b/AdamBFullyConnected_1/b/Adam_1BFullyConnected_2/WBFullyConnected_2/W/AdamBFullyConnected_2/W/Adam_1BFullyConnected_2/bBFullyConnected_2/b/AdamBFullyConnected_2/b/Adam_1BGlobal_StepB
+Training_stepBis_trainingBval_accBval_loss*
+dtype0*
+_output_shapes
+:
+�
+save_1/SaveV2/shape_and_slicesConst*I
+value@B>B B B B B B B B B B B B B B B B B B B B B B B B B B B *
+dtype0*
+_output_shapes
+:
+�
+
+save_1/SaveV2SaveV2save_1/Constsave_1/SaveV2/tensor_namessave_1/SaveV2/shape_and_slicesAccuracy/Mean/moving_avgAdam/beta1_powerAdam/beta2_powerCrossentropy/Mean/moving_avgFullyConnected/WFullyConnected/W/AdamFullyConnected/W/Adam_1FullyConnected/bFullyConnected/b/AdamFullyConnected/b/Adam_1FullyConnected_1/WFullyConnected_1/W/AdamFullyConnected_1/W/Adam_1FullyConnected_1/bFullyConnected_1/b/AdamFullyConnected_1/b/Adam_1FullyConnected_2/WFullyConnected_2/W/AdamFullyConnected_2/W/Adam_1FullyConnected_2/bFullyConnected_2/b/AdamFullyConnected_2/b/Adam_1Global_Step
+Training_stepis_trainingval_accval_loss*)
+dtypes
+2
+
+�
+save_1/control_dependencyIdentitysave_1/Const^save_1/SaveV2*
+T0*
+_class
+loc:@save_1/Const*
+_output_shapes
+: 
+~
+save_1/RestoreV2/tensor_namesConst*-
+value$B"BAccuracy/Mean/moving_avg*
+dtype0*
+_output_shapes
+:
+j
+!save_1/RestoreV2/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2	RestoreV2save_1/Constsave_1/RestoreV2/tensor_names!save_1/RestoreV2/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save_1/AssignAssignAccuracy/Mean/moving_avgsave_1/RestoreV2*
+use_locking(*
+T0*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+validate_shape(*
+_output_shapes
+: 
+x
+save_1/RestoreV2_1/tensor_namesConst*%
+valueBBAdam/beta1_power*
+dtype0*
+_output_shapes
+:
+l
+#save_1/RestoreV2_1/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_1	RestoreV2save_1/Constsave_1/RestoreV2_1/tensor_names#save_1/RestoreV2_1/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_1AssignAdam/beta1_powersave_1/RestoreV2_1*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+x
+save_1/RestoreV2_2/tensor_namesConst*%
+valueBBAdam/beta2_power*
+dtype0*
+_output_shapes
+:
+l
+#save_1/RestoreV2_2/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_2	RestoreV2save_1/Constsave_1/RestoreV2_2/tensor_names#save_1/RestoreV2_2/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_2AssignAdam/beta2_powersave_1/RestoreV2_2*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+�
+save_1/RestoreV2_3/tensor_namesConst*1
+value(B&BCrossentropy/Mean/moving_avg*
+dtype0*
+_output_shapes
+:
+l
+#save_1/RestoreV2_3/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_3	RestoreV2save_1/Constsave_1/RestoreV2_3/tensor_names#save_1/RestoreV2_3/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_3AssignCrossentropy/Mean/moving_avgsave_1/RestoreV2_3*
+use_locking(*
+T0*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+validate_shape(*
+_output_shapes
+: 
+x
+save_1/RestoreV2_4/tensor_namesConst*%
+valueBBFullyConnected/W*
+dtype0*
+_output_shapes
+:
+l
+#save_1/RestoreV2_4/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_4	RestoreV2save_1/Constsave_1/RestoreV2_4/tensor_names#save_1/RestoreV2_4/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_4AssignFullyConnected/Wsave_1/RestoreV2_4*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+}
+save_1/RestoreV2_5/tensor_namesConst**
+value!BBFullyConnected/W/Adam*
+dtype0*
+_output_shapes
+:
+l
+#save_1/RestoreV2_5/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_5	RestoreV2save_1/Constsave_1/RestoreV2_5/tensor_names#save_1/RestoreV2_5/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_5AssignFullyConnected/W/Adamsave_1/RestoreV2_5*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+
+save_1/RestoreV2_6/tensor_namesConst*,
+value#B!BFullyConnected/W/Adam_1*
+dtype0*
+_output_shapes
+:
+l
+#save_1/RestoreV2_6/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_6	RestoreV2save_1/Constsave_1/RestoreV2_6/tensor_names#save_1/RestoreV2_6/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_6AssignFullyConnected/W/Adam_1save_1/RestoreV2_6*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+x
+save_1/RestoreV2_7/tensor_namesConst*%
+valueBBFullyConnected/b*
+dtype0*
+_output_shapes
+:
+l
+#save_1/RestoreV2_7/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_7	RestoreV2save_1/Constsave_1/RestoreV2_7/tensor_names#save_1/RestoreV2_7/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_7AssignFullyConnected/bsave_1/RestoreV2_7*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+}
+save_1/RestoreV2_8/tensor_namesConst**
+value!BBFullyConnected/b/Adam*
+dtype0*
+_output_shapes
+:
+l
+#save_1/RestoreV2_8/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_8	RestoreV2save_1/Constsave_1/RestoreV2_8/tensor_names#save_1/RestoreV2_8/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_8AssignFullyConnected/b/Adamsave_1/RestoreV2_8*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+
+save_1/RestoreV2_9/tensor_namesConst*,
+value#B!BFullyConnected/b/Adam_1*
+dtype0*
+_output_shapes
+:
+l
+#save_1/RestoreV2_9/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_9	RestoreV2save_1/Constsave_1/RestoreV2_9/tensor_names#save_1/RestoreV2_9/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_9AssignFullyConnected/b/Adam_1save_1/RestoreV2_9*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+{
+ save_1/RestoreV2_10/tensor_namesConst*'
+valueBBFullyConnected_1/W*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_10/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_10	RestoreV2save_1/Const save_1/RestoreV2_10/tensor_names$save_1/RestoreV2_10/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_10AssignFullyConnected_1/Wsave_1/RestoreV2_10*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+�
+ save_1/RestoreV2_11/tensor_namesConst*,
+value#B!BFullyConnected_1/W/Adam*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_11/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_11	RestoreV2save_1/Const save_1/RestoreV2_11/tensor_names$save_1/RestoreV2_11/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_11AssignFullyConnected_1/W/Adamsave_1/RestoreV2_11*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+�
+ save_1/RestoreV2_12/tensor_namesConst*.
+value%B#BFullyConnected_1/W/Adam_1*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_12/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_12	RestoreV2save_1/Const save_1/RestoreV2_12/tensor_names$save_1/RestoreV2_12/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_12AssignFullyConnected_1/W/Adam_1save_1/RestoreV2_12*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+{
+ save_1/RestoreV2_13/tensor_namesConst*'
+valueBBFullyConnected_1/b*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_13/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_13	RestoreV2save_1/Const save_1/RestoreV2_13/tensor_names$save_1/RestoreV2_13/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_13AssignFullyConnected_1/bsave_1/RestoreV2_13*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+ save_1/RestoreV2_14/tensor_namesConst*,
+value#B!BFullyConnected_1/b/Adam*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_14/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_14	RestoreV2save_1/Const save_1/RestoreV2_14/tensor_names$save_1/RestoreV2_14/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_14AssignFullyConnected_1/b/Adamsave_1/RestoreV2_14*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+ save_1/RestoreV2_15/tensor_namesConst*.
+value%B#BFullyConnected_1/b/Adam_1*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_15/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_15	RestoreV2save_1/Const save_1/RestoreV2_15/tensor_names$save_1/RestoreV2_15/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_15AssignFullyConnected_1/b/Adam_1save_1/RestoreV2_15*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+{
+ save_1/RestoreV2_16/tensor_namesConst*'
+valueBBFullyConnected_2/W*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_16/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_16	RestoreV2save_1/Const save_1/RestoreV2_16/tensor_names$save_1/RestoreV2_16/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_16AssignFullyConnected_2/Wsave_1/RestoreV2_16*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+�
+ save_1/RestoreV2_17/tensor_namesConst*,
+value#B!BFullyConnected_2/W/Adam*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_17/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_17	RestoreV2save_1/Const save_1/RestoreV2_17/tensor_names$save_1/RestoreV2_17/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_17AssignFullyConnected_2/W/Adamsave_1/RestoreV2_17*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+�
+ save_1/RestoreV2_18/tensor_namesConst*.
+value%B#BFullyConnected_2/W/Adam_1*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_18/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_18	RestoreV2save_1/Const save_1/RestoreV2_18/tensor_names$save_1/RestoreV2_18/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_18AssignFullyConnected_2/W/Adam_1save_1/RestoreV2_18*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+{
+ save_1/RestoreV2_19/tensor_namesConst*'
+valueBBFullyConnected_2/b*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_19/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_19	RestoreV2save_1/Const save_1/RestoreV2_19/tensor_names$save_1/RestoreV2_19/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_19AssignFullyConnected_2/bsave_1/RestoreV2_19*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+�
+ save_1/RestoreV2_20/tensor_namesConst*,
+value#B!BFullyConnected_2/b/Adam*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_20/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_20	RestoreV2save_1/Const save_1/RestoreV2_20/tensor_names$save_1/RestoreV2_20/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_20AssignFullyConnected_2/b/Adamsave_1/RestoreV2_20*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+�
+ save_1/RestoreV2_21/tensor_namesConst*.
+value%B#BFullyConnected_2/b/Adam_1*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_21/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_21	RestoreV2save_1/Const save_1/RestoreV2_21/tensor_names$save_1/RestoreV2_21/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_21AssignFullyConnected_2/b/Adam_1save_1/RestoreV2_21*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+t
+ save_1/RestoreV2_22/tensor_namesConst* 
+valueBBGlobal_Step*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_22/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_22	RestoreV2save_1/Const save_1/RestoreV2_22/tensor_names$save_1/RestoreV2_22/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_22AssignGlobal_Stepsave_1/RestoreV2_22*
+use_locking(*
+T0*
+_class
+loc:@Global_Step*
+validate_shape(*
+_output_shapes
+: 
+v
+ save_1/RestoreV2_23/tensor_namesConst*"
+valueBB
+Training_step*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_23/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_23	RestoreV2save_1/Const save_1/RestoreV2_23/tensor_names$save_1/RestoreV2_23/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_23Assign
+Training_stepsave_1/RestoreV2_23*
+use_locking(*
+T0* 
+_class
+loc:@Training_step*
+validate_shape(*
+_output_shapes
+: 
+t
+ save_1/RestoreV2_24/tensor_namesConst* 
+valueBBis_training*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_24/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_24	RestoreV2save_1/Const save_1/RestoreV2_24/tensor_names$save_1/RestoreV2_24/shape_and_slices*
+dtypes
+2
+*
+_output_shapes
+:
+�
+save_1/Assign_24Assignis_trainingsave_1/RestoreV2_24*
+use_locking(*
+T0
+*
+_class
+loc:@is_training*
+validate_shape(*
+_output_shapes
+: 
+p
+ save_1/RestoreV2_25/tensor_namesConst*
+valueBBval_acc*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_25/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_25	RestoreV2save_1/Const save_1/RestoreV2_25/tensor_names$save_1/RestoreV2_25/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_25Assignval_accsave_1/RestoreV2_25*
+use_locking(*
+T0*
+_class
+loc:@val_acc*
+validate_shape(*
+_output_shapes
+: 
+q
+ save_1/RestoreV2_26/tensor_namesConst*
+valueBBval_loss*
+dtype0*
+_output_shapes
+:
+m
+$save_1/RestoreV2_26/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_1/RestoreV2_26	RestoreV2save_1/Const save_1/RestoreV2_26/tensor_names$save_1/RestoreV2_26/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_1/Assign_26Assignval_losssave_1/RestoreV2_26*
+use_locking(*
+T0*
+_class
+
+loc:@val_loss*
+validate_shape(*
+_output_shapes
+: 
+�
+save_1/restore_allNoOp^save_1/Assign^save_1/Assign_1^save_1/Assign_2^save_1/Assign_3^save_1/Assign_4^save_1/Assign_5^save_1/Assign_6^save_1/Assign_7^save_1/Assign_8^save_1/Assign_9^save_1/Assign_10^save_1/Assign_11^save_1/Assign_12^save_1/Assign_13^save_1/Assign_14^save_1/Assign_15^save_1/Assign_16^save_1/Assign_17^save_1/Assign_18^save_1/Assign_19^save_1/Assign_20^save_1/Assign_21^save_1/Assign_22^save_1/Assign_23^save_1/Assign_24^save_1/Assign_25^save_1/Assign_26
+R
+save_2/ConstConst*
+value
+B Bmodel*
+dtype0*
+_output_shapes
+: 
+�
+save_2/SaveV2/tensor_namesConst*�
+value~B|BFullyConnected/WBFullyConnected/bBFullyConnected_1/WBFullyConnected_1/bBFullyConnected_2/WBFullyConnected_2/b*
+dtype0*
+_output_shapes
+:
+q
+save_2/SaveV2/shape_and_slicesConst*
+valueBB B B B B B *
+dtype0*
+_output_shapes
+:
+�
+
+save_2/SaveV2SaveV2save_2/Constsave_2/SaveV2/tensor_namessave_2/SaveV2/shape_and_slicesFullyConnected/WFullyConnected/bFullyConnected_1/WFullyConnected_1/bFullyConnected_2/WFullyConnected_2/b*
+dtypes
+
+2
+�
+save_2/control_dependencyIdentitysave_2/Const^save_2/SaveV2*
+T0*
+_class
+loc:@save_2/Const*
+_output_shapes
+: 
+v
+save_2/RestoreV2/tensor_namesConst*%
+valueBBFullyConnected/W*
+dtype0*
+_output_shapes
+:
+j
+!save_2/RestoreV2/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_2/RestoreV2	RestoreV2save_2/Constsave_2/RestoreV2/tensor_names!save_2/RestoreV2/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save_2/AssignAssignFullyConnected/Wsave_2/RestoreV2*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+x
+save_2/RestoreV2_1/tensor_namesConst*%
+valueBBFullyConnected/b*
+dtype0*
+_output_shapes
+:
+l
+#save_2/RestoreV2_1/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_2/RestoreV2_1	RestoreV2save_2/Constsave_2/RestoreV2_1/tensor_names#save_2/RestoreV2_1/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_2/Assign_1AssignFullyConnected/bsave_2/RestoreV2_1*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+z
+save_2/RestoreV2_2/tensor_namesConst*'
+valueBBFullyConnected_1/W*
+dtype0*
+_output_shapes
+:
+l
+#save_2/RestoreV2_2/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_2/RestoreV2_2	RestoreV2save_2/Constsave_2/RestoreV2_2/tensor_names#save_2/RestoreV2_2/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_2/Assign_2AssignFullyConnected_1/Wsave_2/RestoreV2_2*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+z
+save_2/RestoreV2_3/tensor_namesConst*'
+valueBBFullyConnected_1/b*
+dtype0*
+_output_shapes
+:
+l
+#save_2/RestoreV2_3/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_2/RestoreV2_3	RestoreV2save_2/Constsave_2/RestoreV2_3/tensor_names#save_2/RestoreV2_3/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_2/Assign_3AssignFullyConnected_1/bsave_2/RestoreV2_3*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+z
+save_2/RestoreV2_4/tensor_namesConst*'
+valueBBFullyConnected_2/W*
+dtype0*
+_output_shapes
+:
+l
+#save_2/RestoreV2_4/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_2/RestoreV2_4	RestoreV2save_2/Constsave_2/RestoreV2_4/tensor_names#save_2/RestoreV2_4/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_2/Assign_4AssignFullyConnected_2/Wsave_2/RestoreV2_4*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+z
+save_2/RestoreV2_5/tensor_namesConst*'
+valueBBFullyConnected_2/b*
+dtype0*
+_output_shapes
+:
+l
+#save_2/RestoreV2_5/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_2/RestoreV2_5	RestoreV2save_2/Constsave_2/RestoreV2_5/tensor_names#save_2/RestoreV2_5/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_2/Assign_5AssignFullyConnected_2/bsave_2/RestoreV2_5*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+�
+save_2/restore_allNoOp^save_2/Assign^save_2/Assign_1^save_2/Assign_2^save_2/Assign_3^save_2/Assign_4^save_2/Assign_5
+�
+initNoOp^FullyConnected/W/Assign^FullyConnected/b/Assign^FullyConnected_1/W/Assign^FullyConnected_1/b/Assign^FullyConnected_2/W/Assign^FullyConnected_2/b/Assign^Training_step/Assign^is_training/Assign^Global_Step/Assign^val_loss/Assign^val_acc/Assign ^Accuracy/Mean/moving_avg/Assign$^Crossentropy/Mean/moving_avg/Assign^Adam/beta1_power/Assign^Adam/beta2_power/Assign^FullyConnected/W/Adam/Assign^FullyConnected/W/Adam_1/Assign^FullyConnected/b/Adam/Assign^FullyConnected/b/Adam_1/Assign^FullyConnected_1/W/Adam/Assign!^FullyConnected_1/W/Adam_1/Assign^FullyConnected_1/b/Adam/Assign!^FullyConnected_1/b/Adam_1/Assign^FullyConnected_2/W/Adam/Assign!^FullyConnected_2/W/Adam_1/Assign^FullyConnected_2/b/Adam/Assign!^FullyConnected_2/b/Adam_1/Assign
+
+init_1NoOp
+"
+
+group_depsNoOp^init^init_1
+#
+init_2NoOp^is_training/Assign
+R
+save_3/ConstConst*
+value
+B Bmodel*
+dtype0*
+_output_shapes
+: 
+�
+save_3/SaveV2/tensor_namesConst*�
+value�B�BAccuracy/Mean/moving_avgBAdam/beta1_powerBAdam/beta2_powerBCrossentropy/Mean/moving_avgBFullyConnected/WBFullyConnected/W/AdamBFullyConnected/W/Adam_1BFullyConnected/bBFullyConnected/b/AdamBFullyConnected/b/Adam_1BFullyConnected_1/WBFullyConnected_1/W/AdamBFullyConnected_1/W/Adam_1BFullyConnected_1/bBFullyConnected_1/b/AdamBFullyConnected_1/b/Adam_1BFullyConnected_2/WBFullyConnected_2/W/AdamBFullyConnected_2/W/Adam_1BFullyConnected_2/bBFullyConnected_2/b/AdamBFullyConnected_2/b/Adam_1BGlobal_StepB
+Training_stepBis_trainingBval_accBval_loss*
+dtype0*
+_output_shapes
+:
+�
+save_3/SaveV2/shape_and_slicesConst*I
+value@B>B B B B B B B B B B B B B B B B B B B B B B B B B B B *
+dtype0*
+_output_shapes
+:
+�
+
+save_3/SaveV2SaveV2save_3/Constsave_3/SaveV2/tensor_namessave_3/SaveV2/shape_and_slicesAccuracy/Mean/moving_avgAdam/beta1_powerAdam/beta2_powerCrossentropy/Mean/moving_avgFullyConnected/WFullyConnected/W/AdamFullyConnected/W/Adam_1FullyConnected/bFullyConnected/b/AdamFullyConnected/b/Adam_1FullyConnected_1/WFullyConnected_1/W/AdamFullyConnected_1/W/Adam_1FullyConnected_1/bFullyConnected_1/b/AdamFullyConnected_1/b/Adam_1FullyConnected_2/WFullyConnected_2/W/AdamFullyConnected_2/W/Adam_1FullyConnected_2/bFullyConnected_2/b/AdamFullyConnected_2/b/Adam_1Global_Step
+Training_stepis_trainingval_accval_loss*)
+dtypes
+2
+
+�
+save_3/control_dependencyIdentitysave_3/Const^save_3/SaveV2*
+T0*
+_class
+loc:@save_3/Const*
+_output_shapes
+: 
+~
+save_3/RestoreV2/tensor_namesConst*-
+value$B"BAccuracy/Mean/moving_avg*
+dtype0*
+_output_shapes
+:
+j
+!save_3/RestoreV2/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2	RestoreV2save_3/Constsave_3/RestoreV2/tensor_names!save_3/RestoreV2/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+
+save_3/AssignAssignAccuracy/Mean/moving_avgsave_3/RestoreV2*
+use_locking(*
+T0*+
+_class!
+loc:@Accuracy/Mean/moving_avg*
+validate_shape(*
+_output_shapes
+: 
+x
+save_3/RestoreV2_1/tensor_namesConst*%
+valueBBAdam/beta1_power*
+dtype0*
+_output_shapes
+:
+l
+#save_3/RestoreV2_1/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_1	RestoreV2save_3/Constsave_3/RestoreV2_1/tensor_names#save_3/RestoreV2_1/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_1AssignAdam/beta1_powersave_3/RestoreV2_1*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+x
+save_3/RestoreV2_2/tensor_namesConst*%
+valueBBAdam/beta2_power*
+dtype0*
+_output_shapes
+:
+l
+#save_3/RestoreV2_2/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_2	RestoreV2save_3/Constsave_3/RestoreV2_2/tensor_names#save_3/RestoreV2_2/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_2AssignAdam/beta2_powersave_3/RestoreV2_2*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+: 
+�
+save_3/RestoreV2_3/tensor_namesConst*1
+value(B&BCrossentropy/Mean/moving_avg*
+dtype0*
+_output_shapes
+:
+l
+#save_3/RestoreV2_3/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_3	RestoreV2save_3/Constsave_3/RestoreV2_3/tensor_names#save_3/RestoreV2_3/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_3AssignCrossentropy/Mean/moving_avgsave_3/RestoreV2_3*
+use_locking(*
+T0*/
+_class%
+#!loc:@Crossentropy/Mean/moving_avg*
+validate_shape(*
+_output_shapes
+: 
+x
+save_3/RestoreV2_4/tensor_namesConst*%
+valueBBFullyConnected/W*
+dtype0*
+_output_shapes
+:
+l
+#save_3/RestoreV2_4/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_4	RestoreV2save_3/Constsave_3/RestoreV2_4/tensor_names#save_3/RestoreV2_4/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_4AssignFullyConnected/Wsave_3/RestoreV2_4*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+}
+save_3/RestoreV2_5/tensor_namesConst**
+value!BBFullyConnected/W/Adam*
+dtype0*
+_output_shapes
+:
+l
+#save_3/RestoreV2_5/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_5	RestoreV2save_3/Constsave_3/RestoreV2_5/tensor_names#save_3/RestoreV2_5/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_5AssignFullyConnected/W/Adamsave_3/RestoreV2_5*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+
+save_3/RestoreV2_6/tensor_namesConst*,
+value#B!BFullyConnected/W/Adam_1*
+dtype0*
+_output_shapes
+:
+l
+#save_3/RestoreV2_6/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_6	RestoreV2save_3/Constsave_3/RestoreV2_6/tensor_names#save_3/RestoreV2_6/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_6AssignFullyConnected/W/Adam_1save_3/RestoreV2_6*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/W*
+validate_shape(*
+_output_shapes
+:	�
+
+x
+save_3/RestoreV2_7/tensor_namesConst*%
+valueBBFullyConnected/b*
+dtype0*
+_output_shapes
+:
+l
+#save_3/RestoreV2_7/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_7	RestoreV2save_3/Constsave_3/RestoreV2_7/tensor_names#save_3/RestoreV2_7/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_7AssignFullyConnected/bsave_3/RestoreV2_7*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+}
+save_3/RestoreV2_8/tensor_namesConst**
+value!BBFullyConnected/b/Adam*
+dtype0*
+_output_shapes
+:
+l
+#save_3/RestoreV2_8/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_8	RestoreV2save_3/Constsave_3/RestoreV2_8/tensor_names#save_3/RestoreV2_8/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_8AssignFullyConnected/b/Adamsave_3/RestoreV2_8*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+
+save_3/RestoreV2_9/tensor_namesConst*,
+value#B!BFullyConnected/b/Adam_1*
+dtype0*
+_output_shapes
+:
+l
+#save_3/RestoreV2_9/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_9	RestoreV2save_3/Constsave_3/RestoreV2_9/tensor_names#save_3/RestoreV2_9/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_9AssignFullyConnected/b/Adam_1save_3/RestoreV2_9*
+use_locking(*
+T0*#
+_class
+loc:@FullyConnected/b*
+validate_shape(*
+_output_shapes
+:
+
+{
+ save_3/RestoreV2_10/tensor_namesConst*'
+valueBBFullyConnected_1/W*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_10/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_10	RestoreV2save_3/Const save_3/RestoreV2_10/tensor_names$save_3/RestoreV2_10/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_10AssignFullyConnected_1/Wsave_3/RestoreV2_10*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+�
+ save_3/RestoreV2_11/tensor_namesConst*,
+value#B!BFullyConnected_1/W/Adam*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_11/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_11	RestoreV2save_3/Const save_3/RestoreV2_11/tensor_names$save_3/RestoreV2_11/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_11AssignFullyConnected_1/W/Adamsave_3/RestoreV2_11*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+�
+ save_3/RestoreV2_12/tensor_namesConst*.
+value%B#BFullyConnected_1/W/Adam_1*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_12/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_12	RestoreV2save_3/Const save_3/RestoreV2_12/tensor_names$save_3/RestoreV2_12/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_12AssignFullyConnected_1/W/Adam_1save_3/RestoreV2_12*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/W*
+validate_shape(*
+_output_shapes
+
+:
+
+
+{
+ save_3/RestoreV2_13/tensor_namesConst*'
+valueBBFullyConnected_1/b*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_13/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_13	RestoreV2save_3/Const save_3/RestoreV2_13/tensor_names$save_3/RestoreV2_13/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_13AssignFullyConnected_1/bsave_3/RestoreV2_13*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+ save_3/RestoreV2_14/tensor_namesConst*,
+value#B!BFullyConnected_1/b/Adam*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_14/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_14	RestoreV2save_3/Const save_3/RestoreV2_14/tensor_names$save_3/RestoreV2_14/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_14AssignFullyConnected_1/b/Adamsave_3/RestoreV2_14*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+�
+ save_3/RestoreV2_15/tensor_namesConst*.
+value%B#BFullyConnected_1/b/Adam_1*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_15/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_15	RestoreV2save_3/Const save_3/RestoreV2_15/tensor_names$save_3/RestoreV2_15/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_15AssignFullyConnected_1/b/Adam_1save_3/RestoreV2_15*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_1/b*
+validate_shape(*
+_output_shapes
+:
+
+{
+ save_3/RestoreV2_16/tensor_namesConst*'
+valueBBFullyConnected_2/W*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_16/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_16	RestoreV2save_3/Const save_3/RestoreV2_16/tensor_names$save_3/RestoreV2_16/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_16AssignFullyConnected_2/Wsave_3/RestoreV2_16*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+�
+ save_3/RestoreV2_17/tensor_namesConst*,
+value#B!BFullyConnected_2/W/Adam*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_17/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_17	RestoreV2save_3/Const save_3/RestoreV2_17/tensor_names$save_3/RestoreV2_17/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_17AssignFullyConnected_2/W/Adamsave_3/RestoreV2_17*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+�
+ save_3/RestoreV2_18/tensor_namesConst*.
+value%B#BFullyConnected_2/W/Adam_1*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_18/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_18	RestoreV2save_3/Const save_3/RestoreV2_18/tensor_names$save_3/RestoreV2_18/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_18AssignFullyConnected_2/W/Adam_1save_3/RestoreV2_18*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/W*
+validate_shape(*
+_output_shapes
+
+:
+
+{
+ save_3/RestoreV2_19/tensor_namesConst*'
+valueBBFullyConnected_2/b*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_19/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_19	RestoreV2save_3/Const save_3/RestoreV2_19/tensor_names$save_3/RestoreV2_19/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_19AssignFullyConnected_2/bsave_3/RestoreV2_19*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+�
+ save_3/RestoreV2_20/tensor_namesConst*,
+value#B!BFullyConnected_2/b/Adam*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_20/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_20	RestoreV2save_3/Const save_3/RestoreV2_20/tensor_names$save_3/RestoreV2_20/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_20AssignFullyConnected_2/b/Adamsave_3/RestoreV2_20*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+�
+ save_3/RestoreV2_21/tensor_namesConst*.
+value%B#BFullyConnected_2/b/Adam_1*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_21/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_21	RestoreV2save_3/Const save_3/RestoreV2_21/tensor_names$save_3/RestoreV2_21/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_21AssignFullyConnected_2/b/Adam_1save_3/RestoreV2_21*
+use_locking(*
+T0*%
+_class
+loc:@FullyConnected_2/b*
+validate_shape(*
+_output_shapes
+:
+t
+ save_3/RestoreV2_22/tensor_namesConst* 
+valueBBGlobal_Step*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_22/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_22	RestoreV2save_3/Const save_3/RestoreV2_22/tensor_names$save_3/RestoreV2_22/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_22AssignGlobal_Stepsave_3/RestoreV2_22*
+use_locking(*
+T0*
+_class
+loc:@Global_Step*
+validate_shape(*
+_output_shapes
+: 
+v
+ save_3/RestoreV2_23/tensor_namesConst*"
+valueBB
+Training_step*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_23/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_23	RestoreV2save_3/Const save_3/RestoreV2_23/tensor_names$save_3/RestoreV2_23/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_23Assign
+Training_stepsave_3/RestoreV2_23*
+use_locking(*
+T0* 
+_class
+loc:@Training_step*
+validate_shape(*
+_output_shapes
+: 
+t
+ save_3/RestoreV2_24/tensor_namesConst* 
+valueBBis_training*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_24/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_24	RestoreV2save_3/Const save_3/RestoreV2_24/tensor_names$save_3/RestoreV2_24/shape_and_slices*
+dtypes
+2
+*
+_output_shapes
+:
+�
+save_3/Assign_24Assignis_trainingsave_3/RestoreV2_24*
+use_locking(*
+T0
+*
+_class
+loc:@is_training*
+validate_shape(*
+_output_shapes
+: 
+p
+ save_3/RestoreV2_25/tensor_namesConst*
+valueBBval_acc*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_25/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_25	RestoreV2save_3/Const save_3/RestoreV2_25/tensor_names$save_3/RestoreV2_25/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_25Assignval_accsave_3/RestoreV2_25*
+use_locking(*
+T0*
+_class
+loc:@val_acc*
+validate_shape(*
+_output_shapes
+: 
+q
+ save_3/RestoreV2_26/tensor_namesConst*
+valueBBval_loss*
+dtype0*
+_output_shapes
+:
+m
+$save_3/RestoreV2_26/shape_and_slicesConst*
+valueB
+B *
+dtype0*
+_output_shapes
+:
+�
+save_3/RestoreV2_26	RestoreV2save_3/Const save_3/RestoreV2_26/tensor_names$save_3/RestoreV2_26/shape_and_slices*
+dtypes
+2*
+_output_shapes
+:
+�
+save_3/Assign_26Assignval_losssave_3/RestoreV2_26*
+use_locking(*
+T0*
+_class
+
+loc:@val_loss*
+validate_shape(*
+_output_shapes
+: 
+�
+save_3/restore_allNoOp^save_3/Assign^save_3/Assign_1^save_3/Assign_2^save_3/Assign_3^save_3/Assign_4^save_3/Assign_5^save_3/Assign_6^save_3/Assign_7^save_3/Assign_8^save_3/Assign_9^save_3/Assign_10^save_3/Assign_11^save_3/Assign_12^save_3/Assign_13^save_3/Assign_14^save_3/Assign_15^save_3/Assign_16^save_3/Assign_17^save_3/Assign_18^save_3/Assign_19^save_3/Assign_20^save_3/Assign_21^save_3/Assign_22^save_3/Assign_23^save_3/Assign_24^save_3/Assign_25^save_3/Assign_26
+d
+Accuracy/__raw_/tagsConst* 
+valueB BAccuracy/__raw_*
+dtype0*
+_output_shapes
+: 
+f
+Accuracy/__raw_
+ScalarSummaryAccuracy/__raw_/tags
+Accuracy/Mean*
+T0*
+_output_shapes
+: 
+i
+Merge/MergeSummaryMergeSummaryLoss
+Adam/Loss/rawAccuracy/__raw_*
+N*
+_output_shapes
+: 
+V
+
+Accuracy/tagsConst*
+valueB BAccuracy*
+dtype0*
+_output_shapes
+: 
+h
+Accuracy
+ScalarSummary
+Accuracy/tagsAccuracy/Mean/moving_avg/read*
+T0*
+_output_shapes
+: 
+u
+Merge_1/MergeSummaryMergeSummaryLoss
+Adam/Loss/rawAccuracy/__raw_Accuracy*
+N*
+_output_shapes
+: "B
+save/Const:0save/control_dependency:0save/restore_all5 @F8"+
+layer_tensor/InputData
+
+
+InputData/X:0"R
+ layer_variables/FullyConnected_1.
+,
+FullyConnected_1/W:0
+FullyConnected_1/b:0"+
+is_training_ops
+
+Assign:0
+
+Assign_1:0"
+trainops
+
+Adam"R
+ layer_variables/FullyConnected_2.
+,
+FullyConnected_2/W:0
+FullyConnected_2/b:0"�
+	variables��
+w
+FullyConnected/W:0FullyConnected/W/AssignFullyConnected/W/read:02/FullyConnected/W/Initializer/truncated_normal:0
+l
+FullyConnected/b:0FullyConnected/b/AssignFullyConnected/b/read:02$FullyConnected/b/Initializer/Const:0
+
+FullyConnected_1/W:0FullyConnected_1/W/AssignFullyConnected_1/W/read:021FullyConnected_1/W/Initializer/truncated_normal:0
+t
+FullyConnected_1/b:0FullyConnected_1/b/AssignFullyConnected_1/b/read:02&FullyConnected_1/b/Initializer/Const:0
+
+FullyConnected_2/W:0FullyConnected_2/W/AssignFullyConnected_2/W/read:021FullyConnected_2/W/Initializer/truncated_normal:0
+t
+FullyConnected_2/b:0FullyConnected_2/b/AssignFullyConnected_2/b/read:02&FullyConnected_2/b/Initializer/Const:0
+\
+Training_step:0Training_step/AssignTraining_step/read:02Training_step/initial_value:0
+X
+
+is_training:0is_training/Assignis_training/read:02is_training/Initializer/Const:0
+T
+
+Global_Step:0Global_Step/AssignGlobal_Step/read:02Global_Step/initial_value:0
+H
+
+val_loss:0val_loss/Assignval_loss/read:02val_loss/initial_value:0
+D
+	val_acc:0val_acc/Assignval_acc/read:02val_acc/initial_value:0
+�
+Accuracy/Mean/moving_avg:0Accuracy/Mean/moving_avg/AssignAccuracy/Mean/moving_avg/read:02,Accuracy/Mean/moving_avg/Initializer/zeros:0
+�
+Crossentropy/Mean/moving_avg:0#Crossentropy/Mean/moving_avg/Assign#Crossentropy/Mean/moving_avg/read:020Crossentropy/Mean/moving_avg/Initializer/zeros:0
+h
+Adam/beta1_power:0Adam/beta1_power/AssignAdam/beta1_power/read:02 Adam/beta1_power/initial_value:0
+h
+Adam/beta2_power:0Adam/beta2_power/AssignAdam/beta2_power/read:02 Adam/beta2_power/initial_value:0
+�
+FullyConnected/W/Adam:0FullyConnected/W/Adam/AssignFullyConnected/W/Adam/read:02)FullyConnected/W/Adam/Initializer/zeros:0
+�
+FullyConnected/W/Adam_1:0FullyConnected/W/Adam_1/AssignFullyConnected/W/Adam_1/read:02+FullyConnected/W/Adam_1/Initializer/zeros:0
+�
+FullyConnected/b/Adam:0FullyConnected/b/Adam/AssignFullyConnected/b/Adam/read:02)FullyConnected/b/Adam/Initializer/zeros:0
+�
+FullyConnected/b/Adam_1:0FullyConnected/b/Adam_1/AssignFullyConnected/b/Adam_1/read:02+FullyConnected/b/Adam_1/Initializer/zeros:0
+�
+FullyConnected_1/W/Adam:0FullyConnected_1/W/Adam/AssignFullyConnected_1/W/Adam/read:02+FullyConnected_1/W/Adam/Initializer/zeros:0
+�
+FullyConnected_1/W/Adam_1:0 FullyConnected_1/W/Adam_1/Assign FullyConnected_1/W/Adam_1/read:02-FullyConnected_1/W/Adam_1/Initializer/zeros:0
+�
+FullyConnected_1/b/Adam:0FullyConnected_1/b/Adam/AssignFullyConnected_1/b/Adam/read:02+FullyConnected_1/b/Adam/Initializer/zeros:0
+�
+FullyConnected_1/b/Adam_1:0 FullyConnected_1/b/Adam_1/Assign FullyConnected_1/b/Adam_1/read:02-FullyConnected_1/b/Adam_1/Initializer/zeros:0
+�
+FullyConnected_2/W/Adam:0FullyConnected_2/W/Adam/AssignFullyConnected_2/W/Adam/read:02+FullyConnected_2/W/Adam/Initializer/zeros:0
+�
+FullyConnected_2/W/Adam_1:0 FullyConnected_2/W/Adam_1/Assign FullyConnected_2/W/Adam_1/read:02-FullyConnected_2/W/Adam_1/Initializer/zeros:0
+�
+FullyConnected_2/b/Adam:0FullyConnected_2/b/Adam/AssignFullyConnected_2/b/Adam/read:02+FullyConnected_2/b/Adam/Initializer/zeros:0
+�
+FullyConnected_2/b/Adam_1:0 FullyConnected_2/b/Adam_1/Assign FullyConnected_2/b/Adam_1/read:02-FullyConnected_2/b/Adam_1/Initializer/zeros:0";
+layer_tensor/FullyConnected
+
+FullyConnected/BiasAdd:0"$
+train_op
+
+Adam/apply_grad_op_0"?
+layer_tensor/FullyConnected_1
+
+FullyConnected_1/BiasAdd:0"?
+layer_tensor/FullyConnected_2
+
+FullyConnected_2/Softmax:0"L
+layer_variables/FullyConnected*
+(
+FullyConnected/W:0
+FullyConnected/b:0"�
+model_variables��
+w
+FullyConnected/W:0FullyConnected/W/AssignFullyConnected/W/read:02/FullyConnected/W/Initializer/truncated_normal:0
+l
+FullyConnected/b:0FullyConnected/b/AssignFullyConnected/b/read:02$FullyConnected/b/Initializer/Const:0
+
+FullyConnected_1/W:0FullyConnected_1/W/AssignFullyConnected_1/W/read:021FullyConnected_1/W/Initializer/truncated_normal:0
+t
+FullyConnected_1/b:0FullyConnected_1/b/AssignFullyConnected_1/b/read:02&FullyConnected_1/b/Initializer/Const:0
+
+FullyConnected_2/W:0FullyConnected_2/W/AssignFullyConnected_2/W/read:021FullyConnected_2/W/Initializer/truncated_normal:0
+t
+FullyConnected_2/b:0FullyConnected_2/b/AssignFullyConnected_2/b/read:02&FullyConnected_2/b/Initializer/Const:0
+X
+
+is_training:0is_training/Assignis_training/read:02is_training/Initializer/Const:0"G
+	summaries:
+8
+Loss:0
+Adam/Loss/raw:0
+Accuracy/__raw_:0
+
+Accuracy:0"�
+trainable_variables��
+w
+FullyConnected/W:0FullyConnected/W/AssignFullyConnected/W/read:02/FullyConnected/W/Initializer/truncated_normal:0
+l
+FullyConnected/b:0FullyConnected/b/AssignFullyConnected/b/read:02$FullyConnected/b/Initializer/Const:0
+
+FullyConnected_1/W:0FullyConnected_1/W/AssignFullyConnected_1/W/read:021FullyConnected_1/W/Initializer/truncated_normal:0
+t
+FullyConnected_1/b:0FullyConnected_1/b/AssignFullyConnected_1/b/read:02&FullyConnected_1/b/Initializer/Const:0
+
+FullyConnected_2/W:0FullyConnected_2/W/AssignFullyConnected_2/W/read:021FullyConnected_2/W/Initializer/truncated_normal:0
+t
+FullyConnected_2/b:0FullyConnected_2/b/AssignFullyConnected_2/b/read:02&FullyConnected_2/b/Initializer/Const:0"U
+Adam_training_summaries:
+8
+Loss:0
+Adam/Loss/raw:0
+Accuracy/__raw_:0
+
+Accuracy:0"c
+activationsT
+R
+FullyConnected/BiasAdd:0
+FullyConnected_1/BiasAdd:0
+FullyConnected_2/Softmax:0" 
+is_training
+
+
+is_training:0"
+targets
+
+TargetsData/Y:0"
+inputs
+
+
+InputData/X:0
